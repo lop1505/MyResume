@@ -3,6 +3,10 @@
     --shiny-bg-color: #E2E3E6;
 }
 
+#header-img{
+    transform: scaleX(-1);
+}
+
 .header-bg-color{
     background-color: var(--main-bg-color);
 }
@@ -32,6 +36,7 @@
     font-size: 1rem;
     color: var(--main-bg-color);
 }
+
 
 .container{
     display: grid;
