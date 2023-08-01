@@ -20,10 +20,10 @@
         </div>
   
         <ul class="nav col-12 col-md-auto  justify-content-center">
-          <li><a href="#" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">About me</a></li>
-          <li><a href="#" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Experience/Education</a></li>
-          <li><a href="#" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Projects</a></li>
-          <li><a href="#" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Skills</a></li>
+          <li><a href="#aboutme" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">About me</a></li>
+          <li><a href="#education" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Experience/Education</a></li>
+          <li><a href="#projekte" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Projects</a></li>
+          <li><a href="#staerken" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Skills</a></li>
         </ul>
   
         <div class="col-md-1">
@@ -33,7 +33,7 @@
     </div>
 
     <!-- ===== Landing-Site ===== -->
-    <div class="px-4 pt-5 my-5 text-center">
+    <div class="px-4 pt-5 my-5 text-center" id="aboutme">
       <h1 class="header-font-bold mb-0">Patrick Lohmann</h1>
       <h2 class="sub-header-font-bold">Lebenslauf, Soest Deutschland</h2>
       <div class="p-5">
@@ -54,7 +54,7 @@
         <img class="container-img" src="./images/puzzle.jpg" alt="puzzle" width="auto">
       </div>
 
-      <div class="shiny-grid grid-txt grid2">
+      <div class="shiny-grid grid-txt grid2" id="education">
         <h1>Eductaion</h1>
         <a href="#">Learn more</a>
         <ul class="cv-items">
@@ -105,11 +105,11 @@
       </div>
       </div>
     <!-- ===== Projekte ===== -->
-      <div class="grid-one-col">
+      <div class="grid-one-col" id="projekte">
       <div class="dark-grid prj-img">
         <img class="container-img" src="./images/experience.jpg" alt="experience" width="auto">
       </div>
-      <div class="shiny-grid grid-txt prj-txt">
+      <div class="shiny-grid grid-txt prj-txt prj-txt-top">
         <h1>Projekte</h1>
         <ul class="cv-items">
           <li>
@@ -128,8 +128,7 @@
           </li>
         </ul>
       </div>
-      <div class="dark-grid grid-txt prj-txt">
-        <h1></h1>
+      <div class="dark-grid grid-txt prj-txt prj-txt-bottom">
         <ul class="cv-items">
           <li>
         Stammdatenbereinigung (Stücklisten und Arbeitspläne) als Product Owner<br>
@@ -156,6 +155,139 @@
       </div>
       </div>
 
+      <!-- ===== Skills ===== -->
+      <div class="grid-container grid-skill" id="staerken">
+        <div class="grid-row-span-2 shiny-grid grid-staerke">
+          <h1>Stärken</h1>
+          <div class="grid-row-3">
+          <div>Führungskonpetenz</div>
+          <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="50">
+            <div class="progress-bar progress-bar-striped bg-info" style="width: 95%"></div>
+          </div>
+        </div>
+        <div class="grid-row-3">
+        <div>Scrum als Project Owner</div>
+        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="50">
+          <div class="progress-bar progress-bar-striped bg-info" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="grid-row-3">
+      <div>Jira/Confluence</div>
+      <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="50">
+        <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
+      </div>
+    </div>
+    <div class="grid-row-3">
+      <div>Komplexitätsmanagement</div>
+      <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="50">
+        <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
+      </div>
+    </div>
+  </div>
+        <div class="grid-row-span-2 dark-grid grid-it-staerke">
+          <h1>IT-Stärken</h1>
+
+          <div class="grid-row-3-small">
+            <div>SAP VC/ETO</div>
+            <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="50">
+              <div class="progress-bar progress-bar-striped bg-info" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="grid-row-3-small">
+          <div>SAP CPQ</div>
+          <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="50">
+            <div class="progress-bar progress-bar-striped bg-info" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="grid-row-3-small">
+        <div>SAP MM/PP</div>
+        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="50">
+          <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="grid-row-3-small">
+        <div>Office 365</div>
+        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="50">
+          <div class="progress-bar progress-bar-striped bg-info" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="grid-row-3-small">
+        <div>Python</div>
+        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="50">
+          <div class="progress-bar progress-bar-striped bg-info" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="grid-row-3-small">
+        <div>HTML/CSS</div>
+        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="50">
+          <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="grid-row-3-small">
+        <div>Javascript</div>
+        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="50">
+          <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
+        </div>
+      </div>
+        </div>
+        <div class="dark-grid grid-sprache">
+          <h1>Sprachen</h1>
+          <div class="grid-row-3-small">
+            <div>Deutsch</div>
+            <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="50">
+              <div class="progress-bar progress-bar-striped bg-info" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="grid-row-3-small">
+          <div>Englisch</div>
+          <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="50">
+            <div class="progress-bar progress-bar-striped bg-info" style="width: 80%"></div>
+          </div>
+        </div>
+        </div>
+        <div class="shiny-grid grid-interesse">
+          <h1>Interessen</h1>
+          <div class="grid-2x2">
+          <div class="grid-row-2">
+            <div>Fußball</div>
+            <img src="./images/football.png" alt="football" height="40px" width="auto">
+          </div>
+          <div class="grid-row-2">
+          <div>Lesen</div>
+          <img src="./images/book.png" alt="book" height="40px" width="auto">
+        </div>
+        <div class="grid-row-2">
+          <div>3D-Druck</div>
+          <img src="./images/printer.png" alt="printer" height="40px" width="auto">
+        </div>
+        <div class="grid-row-2">
+          <div>Tischlern/Heimwerken</div>
+          <img src="./images/wooden-board.png" alt="wooden board" height="40px" width="auto">
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <!-- ===== Footer ===== -->
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+              <img src="images/profile_pic.png" id="header-img" alt="profile picture" width="40" height="40" class="rounded-circle">
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Patrick Lohmann</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-body-secondary" href="https://xing.com/profile/Patrick_Lohmann7">
+              <img class="bi" src="images/xing-logo.png" alt="xing-logo" width="24" height="24">
+            </a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/patrick-lohmann-bba54b171">
+              <img class="bi" src="images/linkedin-logo.png" alt="linkedin-logo" width="24" height="24">
+            </a></li>
+          </ul>
+        </footer>
+      </div>
 
   </body>
 </html>
