@@ -171,6 +171,53 @@ img{
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.header-controls {
+    gap: 0.45rem;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+}
+
+.lang-flag {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.lang-flag svg {
+    display: block;
+}
+
+.lang-flag:hover,
+.lang-flag:focus-visible,
+.lang-flag.is-active {
+    opacity: 1;
+}
+
+.lang-de,
+.lang-en {
+    display: none;
+}
+
+html[lang='de'] .lang-de {
+    display: block;
+}
+
+html[lang='en'] .lang-en {
+    display: block;
+}
+
+.cv-items > li > .lang-de,
+.cv-items > li > .lang-en {
+    display: inline;
+}
+
 .theme-toggle-btn:hover,
 .theme-toggle-btn:focus{
     background-color: var(--copper);
@@ -223,6 +270,11 @@ details summary:hover .section-title {
     }
     details summary {
         display: none;
+    }
+
+    html[lang='de'] .lang-en,
+    html[lang='en'] .lang-de {
+        display: none !important;
     }
 }
 

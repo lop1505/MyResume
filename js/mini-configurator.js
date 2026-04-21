@@ -3,6 +3,33 @@
   if (!root) return;
   const openBtn = document.getElementById('cfg-open-btn');
 
+  const i18n = {
+    de: {
+      messages: {
+        remoteAutomotive: 'Remote + Automotive ist gesperrt: die meisten OEMs lassen das nicht zu.',
+        automotiveRemote: 'Automotive + Remote ist gesperrt: bitte Hybrid oder Vor Ort wählen.',
+        juniorProjectLead: 'Junior + Projektleiter ist gesperrt.',
+        veteranDoors: 'Easter Egg aktiv: Veteran erzwingt Türen & Tore.',
+        cpqWithoutVc: 'CPQ ohne VC funktioniert, aber der Consultant wird unrund.'
+      },
+      openLabel: 'Mini-Konfigurator öffnen',
+      closeLabel: 'Mini-Konfigurator schließen',
+      locale: 'de-DE'
+    },
+    en: {
+      messages: {
+        remoteAutomotive: "Remote + Automotive is locked: most OEMs don't allow this.",
+        automotiveRemote: 'Automotive + Remote is locked: please choose hybrid or on-site.',
+        juniorProjectLead: 'Junior + Project Lead is locked.',
+        veteranDoors: 'Easter egg active: Veteran enforces Doors & Gates.',
+        cpqWithoutVc: 'CPQ without VC works, but the consultant becomes unstable.'
+      },
+      openLabel: 'Open Mini Configurator',
+      closeLabel: 'Close Mini Configurator',
+      locale: 'en-GB'
+    }
+  };
+
   const els = {
     domainChecks: Array.from(root.querySelectorAll('input[name="cfg-domain"]')),
     level: document.getElementById('cfg-level'),
@@ -35,12 +62,20 @@
     Projektleiter: 140
   };
 
+  function getLang() {
+    return document.documentElement.lang === 'en' ? 'en' : 'de';
+  }
+
+  function t() {
+    return i18n[getLang()];
+  }
+
   function getDomains() {
     return els.domainChecks.filter((c) => c.checked).map((c) => c.value);
   }
 
   function formatRate(value) {
-    return new Intl.NumberFormat('de-DE', {
+    return new Intl.NumberFormat(t().locale, {
       style: 'currency',
       currency: 'EUR',
       maximumFractionDigits: 0
@@ -72,7 +107,7 @@
       }
       messages.push({
         type: 'lock',
-        text: 'Remote + Automotive ist gesperrt: die meisten OEMs lassen das nicht zu.'
+        text: t().messages.remoteAutomotive
       });
     }
 
@@ -83,7 +118,7 @@
       }
       messages.push({
         type: 'lock',
-        text: 'Automotive + Remote ist gesperrt: bitte Hybrid oder Vor Ort wählen.'
+        text: t().messages.automotiveRemote
       });
     }
 
@@ -92,7 +127,7 @@
       if (role === 'Projektleiter') {
         els.role.value = '';
       }
-      messages.push({ type: 'lock', text: 'Junior + Projektleiter ist gesperrt.' });
+      messages.push({ type: 'lock', text: t().messages.juniorProjectLead });
     }
 
     if (level === 'Veteran') {
@@ -100,14 +135,14 @@
       if (els.industry.value !== 'TuerenTore') {
         els.industry.value = 'TuerenTore';
       }
-      messages.push({ type: 'lock', text: 'Easter Egg aktiv: Veteran erzwingt Türen & Tore.' });
+      messages.push({ type: 'lock', text: t().messages.veteranDoors });
     }
 
     const domains = getDomains();
     if (domains.includes('SAP CPQ') && !domains.includes('SAP VC')) {
       messages.push({
         type: 'warn',
-        text: 'CPQ ohne VC funktioniert, aber der Consultant wird unrund.'
+        text: t().messages.cpqWithoutVc
       });
     }
 
@@ -230,16 +265,27 @@
         root.classList.remove('cfg-collapsed');
         root.setAttribute('aria-hidden', 'false');
         openBtn.setAttribute('aria-expanded', 'true');
-        openBtn.textContent = 'Mini-Konfigurator schließen';
+        openBtn.textContent = t().closeLabel;
         root.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
         root.classList.add('cfg-collapsed');
         root.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
-        openBtn.textContent = 'Mini-Konfigurator öffnen';
+        openBtn.textContent = t().openLabel;
       }
     });
   }
+
+  document.addEventListener('resume:lang-change', function () {
+    if (!openBtn) {
+      update();
+      return;
+    }
+
+    const isOpen = !root.classList.contains('cfg-collapsed');
+    openBtn.textContent = isOpen ? t().closeLabel : t().openLabel;
+    update();
+  });
 
   update();
 })();

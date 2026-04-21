@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lebenslauf | Patrick Lohmann</title>
+    <title data-title-de="Lebenslauf | Patrick Lohmann" data-title-en="Resume | Patrick Lohmann">Lebenslauf | Patrick Lohmann</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,13 +37,31 @@
         </div>
   
         <ul class="nav col-12 col-md-auto  justify-content-center">
-          <li><a href="#aboutme" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Profil</a></li>
-          <li><a href="#education" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Erfahrung & Ausbildung</a></li>
-          <li><a href="#projekte" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Projekte</a></li>
-          <li><a href="#staerken" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Stärken</a></li>
+          <li><a href="#aboutme" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white" data-de="Profil" data-en="Profile">Profil</a></li>
+          <li><a href="#education" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white" data-de="Erfahrung & Ausbildung" data-en="Experience & Education">Erfahrung & Ausbildung</a></li>
+          <li><a href="#projekte" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white" data-de="Projekte" data-en="Projects">Projekte</a></li>
+          <li><a href="#staerken" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white" data-de="Stärken" data-en="Skills">Stärken</a></li>
         </ul>
   
-        <div class="col-md-1 d-flex justify-content-md-end justify-content-center px-2">
+        <div class="col-md-1 d-flex justify-content-md-end justify-content-center px-2 header-controls">
+          <div class="lang-toggle" aria-label="Language toggle">
+            <button type="button" class="lang-flag is-active" data-lang-toggle="de" aria-label="Deutsch" aria-pressed="true">
+              <svg viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false">
+                <rect width="24" height="16" rx="2" fill="#000000"></rect>
+                <rect y="5.33" width="24" height="5.34" fill="#DD0000"></rect>
+                <rect y="10.66" width="24" height="5.34" fill="#FFCE00"></rect>
+              </svg>
+            </button>
+            <button type="button" class="lang-flag" data-lang-toggle="en" aria-label="English" aria-pressed="false">
+              <svg viewBox="0 0 24 16" width="24" height="16" aria-hidden="true" focusable="false">
+                <rect width="24" height="16" rx="2" fill="#012169"></rect>
+                <path d="M0 0L24 16M24 0L0 16" stroke="#FFFFFF" stroke-width="3.2"></path>
+                <path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.6"></path>
+                <path d="M12 0V16M0 8H24" stroke="#FFFFFF" stroke-width="5"></path>
+                <path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="3"></path>
+              </svg>
+            </button>
+          </div>
           <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Zum dunklen Design wechseln" aria-pressed="false">Dunkel</button>
         </div>
       </header>
@@ -54,27 +72,27 @@
 
     <!-- ===== Landing-Site ===== -->
     <div class="px-4 pt-5 my-5 text-center" id="aboutme">
-      <p class="hero-kicker mb-2">Senior Business Consultant · SAP VC / CPQ · Wilo Group</p>
+      <p class="hero-kicker mb-2" data-de="Senior Business Consultant · SAP VC / CPQ · Wilo Group" data-en="Senior Business Consultant · SAP VC / CPQ · Wilo Group">Senior Business Consultant · SAP VC / CPQ · Wilo Group</p>
       <h1 class="header-font-bold mb-0">Patrick Lohmann</h1>
-      <h2 class="sub-header-font-bold">Soest, Deutschland</h2>
+      <h2 class="sub-header-font-bold" data-de="Soest, Deutschland" data-en="Soest, Germany">Soest, Deutschland</h2>
       <div class="p-5">
         <img src="./images/profile_pic_circle.png" class="rounded-circle" alt="profile picture" width="270" height="270" loading="lazy">
       </div>
-      <h1 class="header-font">Ich verbinde SAP-Konfiguration, CPQ und Prozessverständnis zu tragfähigen Lösungen.</h1>
-      <div class="hero-tags" aria-label="Schwerpunkte">
+      <h1 class="header-font" data-de="Ich verbinde SAP-Konfiguration, CPQ und Prozessverständnis zu tragfähigen Lösungen." data-en="I combine SAP configuration, CPQ and process expertise into sustainable solutions.">Ich verbinde SAP-Konfiguration, CPQ und Prozessverständnis zu tragfähigen Lösungen.</h1>
+      <div class="hero-tags" aria-label="Schwerpunkte" data-aria-de="Schwerpunkte" data-aria-en="Focus Areas">
         <span class="hero-tag">SAP VC</span>
         <span class="hero-tag">SAP CPQ</span>
         <span class="hero-tag">ETO</span>
-        <span class="hero-tag">Prozessoptimierung</span>
+        <span class="hero-tag" data-de="Prozessoptimierung" data-en="Process Optimization">Prozessoptimierung</span>
         <span class="hero-tag">Product Ownership</span>
       </div>
       <div class="col-lg-7 mx-auto hero-copy">
-        <p class="sub-header-font mb-3">Ich arbeite an der Schnittstelle von IT, Konfiguration und Unternehmensprozessen. Mein Schwerpunkt liegt darauf, komplexe Produkt- und Prozesslogiken in belastbare, verständliche und wirtschaftlich sinnvolle SAP- und CPQ-Lösungen zu übersetzen.</p>
-        <p class="sub-header-font mb-4">Dabei verbinde ich technisches Detailverständnis mit strukturierter Umsetzung, analytischem Denken und einem klaren Blick für praktikable Ergebnisse im Fachbereich.</p>
+        <p class="sub-header-font mb-3" data-de="Ich arbeite an der Schnittstelle von IT, Konfiguration und Unternehmensprozessen. Mein Schwerpunkt liegt darauf, komplexe Produkt- und Prozesslogiken in belastbare, verständliche und wirtschaftlich sinnvolle SAP- und CPQ-Lösungen zu übersetzen." data-en="I work at the intersection of IT, configuration and business processes. My focus is translating complex product and process logic into robust, understandable and commercially sound SAP and CPQ solutions.">Ich arbeite an der Schnittstelle von IT, Konfiguration und Unternehmensprozessen. Mein Schwerpunkt liegt darauf, komplexe Produkt- und Prozesslogiken in belastbare, verständliche und wirtschaftlich sinnvolle SAP- und CPQ-Lösungen zu übersetzen.</p>
+        <p class="sub-header-font mb-4" data-de="Dabei verbinde ich technisches Detailverständnis mit strukturierter Umsetzung, analytischem Denken und einem klaren Blick für praktikable Ergebnisse im Fachbereich." data-en="I combine deep technical understanding with structured delivery, analytical thinking and a clear focus on practical outcomes for business teams.">Dabei verbinde ich technisches Detailverständnis mit strukturierter Umsetzung, analytischem Denken und einem klaren Blick für praktikable Ergebnisse im Fachbereich.</p>
         <div class="hero-actions no-print">
-          <button type="button" class="export-pdf-btn" onclick="window.print()">Als PDF exportieren</button>
-          <button type="button" id="cfg-open-btn" class="export-pdf-btn cfg-open-btn" aria-controls="cfg-mini-configurator" aria-expanded="false">Mini-Konfigurator öffnen</button>
-          <button type="button" id="tree-open-btn" class="export-pdf-btn tree-open-btn" aria-controls="vc-tree-artifact" aria-expanded="false">Merkmalsbaum öffnen</button>
+          <button type="button" class="export-pdf-btn" onclick="window.print()" data-de="Als PDF exportieren" data-en="Export as PDF">Als PDF exportieren</button>
+          <button type="button" id="cfg-open-btn" class="export-pdf-btn cfg-open-btn" aria-controls="cfg-mini-configurator" aria-expanded="false" data-open-de="Mini-Konfigurator öffnen" data-open-en="Open Mini Configurator" data-close-de="Mini-Konfigurator schließen" data-close-en="Close Mini Configurator">Mini-Konfigurator öffnen</button>
+          <button type="button" id="tree-open-btn" class="export-pdf-btn tree-open-btn" aria-controls="vc-tree-artifact" aria-expanded="false" data-open-de="Merkmalsbaum öffnen" data-open-en="Open Feature Tree" data-close-de="Merkmalsbaum schließen" data-close-en="Close Feature Tree">Merkmalsbaum öffnen</button>
         </div>
       </div>
       <div class="overflow-hidden" style="max-height: 30vh;">
@@ -86,8 +104,8 @@
     <section id="cfg-mini-configurator" class="cfg-wrap cfg-collapsed" aria-labelledby="cfg-title" aria-hidden="true">
       <div class="cfg-shell">
         <div class="cfg-card">
-          <h2 id="cfg-title" class="cfg-title">VC/CPQ Mini-Konfigurator</h2>
-          <p class="cfg-intro">
+          <h2 id="cfg-title" class="cfg-title" data-de="VC/CPQ Mini-Konfigurator" data-en="VC/CPQ Mini Configurator">VC/CPQ Mini-Konfigurator</h2>
+          <p class="cfg-intro" data-de="Ein kleiner Meta-Spaß auf dieser Seite, aber mit echter Regel-Engine im Hintergrund. Constraints sperren inkompatible Optionen live, Preisfindung aktualisiert sich bei jeder Änderung. Genau so arbeitet SAP VC. Nur kleiner. Und ehrlicher." data-en="A small meta-fun element on this page, but with a real rule engine behind it. Constraints lock incompatible options in real time, and pricing updates with every change. This is how SAP VC works. Just smaller. And more honest.">
             Ein kleiner Meta-Spaß auf dieser Seite, aber mit echter Regel-Engine im Hintergrund.
             Constraints sperren inkompatible Optionen live, Preisfindung aktualisiert sich bei jeder
             Änderung. Genau so arbeitet SAP VC. Nur kleiner. Und ehrlicher.
@@ -95,7 +113,7 @@
 
           <div class="cfg-grid">
             <div class="cfg-row">
-              <span class="cfg-label">Merkmal: Einsatzgebiet (Mehrfachauswahl)</span>
+              <span class="cfg-label" data-de="Merkmal: Einsatzgebiet (Mehrfachauswahl)" data-en="Characteristic: Domain (multi-select)">Merkmal: Einsatzgebiet (Mehrfachauswahl)</span>
               <div class="cfg-chip-wrap" id="cfg-domain-wrap">
                 <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP VC" />SAP VC</label>
                 <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP CPQ" />SAP CPQ</label>
@@ -105,67 +123,67 @@
             </div>
 
             <div class="cfg-row">
-              <label class="cfg-label" for="cfg-level">Merkmal: Erfahrungslevel</label>
+              <label class="cfg-label" for="cfg-level" data-de="Merkmal: Erfahrungslevel" data-en="Characteristic: Experience Level">Merkmal: Erfahrungslevel</label>
               <select id="cfg-level" class="cfg-select">
-                <option value="">Bitte wählen</option>
-                <option value="Junior">Junior</option>
-                <option value="Senior">Senior</option>
-                <option value="Lead">Lead</option>
-                <option value="Veteran">Der, der 2014 dabei war</option>
+                <option value="" data-de="Bitte wählen" data-en="Please select">Bitte wählen</option>
+                <option value="Junior" data-de="Junior" data-en="Junior">Junior</option>
+                <option value="Senior" data-de="Senior" data-en="Senior">Senior</option>
+                <option value="Lead" data-de="Lead" data-en="Lead">Lead</option>
+                <option value="Veteran" data-de="Der, der 2014 dabei war" data-en="The one who was there in 2014">Der, der 2014 dabei war</option>
               </select>
             </div>
 
             <div class="cfg-row">
-              <label class="cfg-label" for="cfg-industry">Merkmal: Branche</label>
+              <label class="cfg-label" for="cfg-industry" data-de="Merkmal: Branche" data-en="Characteristic: Industry">Merkmal: Branche</label>
               <select id="cfg-industry" class="cfg-select">
-                <option value="">Bitte wählen</option>
-                <option value="Maschinenbau">Maschinenbau</option>
-                <option value="Pumpenbau">Pumpenbau</option>
-                <option value="TuerenTore">Türen & Tore</option>
-                <option value="Automotive">Automotive</option>
-                <option value="AnythingETO">Anything ETO</option>
+                <option value="" data-de="Bitte wählen" data-en="Please select">Bitte wählen</option>
+                <option value="Maschinenbau" data-de="Maschinenbau" data-en="Mechanical Engineering">Maschinenbau</option>
+                <option value="Pumpenbau" data-de="Pumpenbau" data-en="Pump Manufacturing">Pumpenbau</option>
+                <option value="TuerenTore" data-de="Türen & Tore" data-en="Doors & Gates">Türen & Tore</option>
+                <option value="Automotive" data-de="Automotive" data-en="Automotive">Automotive</option>
+                <option value="AnythingETO" data-de="Anything ETO" data-en="Anything ETO">Anything ETO</option>
               </select>
             </div>
 
             <div class="cfg-row">
-              <label class="cfg-label" for="cfg-role">Merkmal: Rolle</label>
+              <label class="cfg-label" for="cfg-role" data-de="Merkmal: Rolle" data-en="Characteristic: Role">Merkmal: Rolle</label>
               <select id="cfg-role" class="cfg-select">
-                <option value="">Bitte wählen</option>
-                <option value="Business Consultant">Business Consultant</option>
-                <option value="Technical Consultant">Technical Consultant</option>
-                <option value="Product Owner">Product Owner</option>
-                <option value="Projektleiter">Projektleiter</option>
+                <option value="" data-de="Bitte wählen" data-en="Please select">Bitte wählen</option>
+                <option value="Business Consultant" data-de="Business Consultant" data-en="Business Consultant">Business Consultant</option>
+                <option value="Technical Consultant" data-de="Technical Consultant" data-en="Technical Consultant">Technical Consultant</option>
+                <option value="Product Owner" data-de="Product Owner" data-en="Product Owner">Product Owner</option>
+                <option value="Projektleiter" data-de="Projektleiter" data-en="Project Lead">Projektleiter</option>
               </select>
             </div>
 
             <div class="cfg-row">
-              <label class="cfg-label" for="cfg-location">Merkmal: Standort</label>
+              <label class="cfg-label" for="cfg-location" data-de="Merkmal: Standort" data-en="Characteristic: Location">Merkmal: Standort</label>
               <select id="cfg-location" class="cfg-select">
-                <option value="">Bitte wählen</option>
-                <option value="Remote">Remote</option>
-                <option value="Hybrid">Hybrid</option>
-                <option value="Vor Ort (Umkreis Soest)">Vor Ort (Umkreis Soest)</option>
+                <option value="" data-de="Bitte wählen" data-en="Please select">Bitte wählen</option>
+                <option value="Remote" data-de="Remote" data-en="Remote">Remote</option>
+                <option value="Hybrid" data-de="Hybrid" data-en="Hybrid">Hybrid</option>
+                <option value="Vor Ort (Umkreis Soest)" data-de="Vor Ort (Umkreis Soest)" data-en="On-site (Soest region)">Vor Ort (Umkreis Soest)</option>
               </select>
             </div>
 
             <div class="cfg-row">
-              <label class="cfg-label" for="cfg-humor">Merkmal: Humor-Level</label>
+              <label class="cfg-label" for="cfg-humor" data-de="Merkmal: Humor-Level" data-en="Characteristic: Humor Level">Merkmal: Humor-Level</label>
               <select id="cfg-humor" class="cfg-select">
-                <option value="">Bitte wählen</option>
-                <option value="Kein Smalltalk">Kein Smalltalk</option>
-                <option value="Professionell">Professionell</option>
-                <option value="Passt zur Kaffeekueche">Passt zur Kaffeeküche</option>
+                <option value="" data-de="Bitte wählen" data-en="Please select">Bitte wählen</option>
+                <option value="Kein Smalltalk" data-de="Kein Smalltalk" data-en="No small talk">Kein Smalltalk</option>
+                <option value="Professionell" data-de="Professionell" data-en="Professional">Professionell</option>
+                <option value="Passt zur Kaffeekueche" data-de="Passt zur Kaffeeküche" data-en="Coffee-corner friendly">Passt zur Kaffeeküche</option>
               </select>
             </div>
 
             <div class="cfg-row">
-              <label class="cfg-label" for="cfg-coffee">Merkmal: Koffein-Bedarf</label>
+              <label class="cfg-label" for="cfg-coffee" data-de="Merkmal: Koffein-Bedarf" data-en="Characteristic: Caffeine Demand">Merkmal: Koffein-Bedarf</label>
               <select id="cfg-coffee" class="cfg-select">
-                <option value="">Bitte wählen</option>
+                <option value="" data-de="Bitte wählen" data-en="Please select">Bitte wählen</option>
                 <option value="1">☕</option>
                 <option value="2">☕☕</option>
                 <option value="3">☕☕☕</option>
-                <option value="4">Nicht vor 10 Uhr</option>
+                <option value="4" data-de="Nicht vor 10 Uhr" data-en="Not before 10 AM">Nicht vor 10 Uhr</option>
               </select>
             </div>
           </div>
@@ -173,18 +191,18 @@
 
         <aside class="cfg-card cfg-side" aria-live="polite">
           <div class="cfg-stat">
-            <div class="cfg-stat-label">Match-Score</div>
+            <div class="cfg-stat-label" data-de="Match-Score" data-en="Match Score">Match-Score</div>
             <div id="cfg-score" class="cfg-stat-value">0%</div>
             <div class="cfg-meter"><span id="cfg-meter"></span></div>
           </div>
 
           <div class="cfg-stat">
-            <div class="cfg-stat-label">Indikativer Tagessatz</div>
+            <div class="cfg-stat-label" data-de="Indikativer Tagessatz" data-en="Indicative Daily Rate">Indikativer Tagessatz</div>
             <div id="cfg-rate" class="cfg-stat-value">-</div>
           </div>
 
           <div class="cfg-stat">
-            <div class="cfg-stat-label">Aktive Meldungen</div>
+            <div class="cfg-stat-label" data-de="Aktive Meldungen" data-en="Active Messages">Aktive Meldungen</div>
             <ul id="cfg-messages" class="cfg-msg"></ul>
           </div>
 
@@ -192,13 +210,13 @@
             <h3>🎯 Patrick Lohmann · Senior Business Consultant · SAP VC/CPQ · Wilo Group</h3>
             <div class="cfg-actions">
               <a class="cfg-link" href="https://www.linkedin.com/in/patrick-l-bba54b171/" target="_blank" rel="noopener noreferrer">
-                LinkedIn öffnen
+                <span data-de="LinkedIn öffnen" data-en="Open LinkedIn">LinkedIn öffnen</span>
               </a>
             </div>
           </div>
 
           <div class="cfg-actions">
-            <button id="cfg-reset" class="cfg-btn" type="button">Reset</button>
+            <button id="cfg-reset" class="cfg-btn" type="button" data-de="Reset" data-en="Reset">Reset</button>
           </div>
         </aside>
       </div>
@@ -288,54 +306,74 @@
 
     <!-- ===== Experience/Education ===== -->
     <details open>
-      <summary><h1 class="section-title">Ausbildung & Erfahrung</h1></summary>
+      <summary><h1 class="section-title" data-de="Ausbildung & Erfahrung" data-en="Education & Experience">Ausbildung & Erfahrung</h1></summary>
       <div class="grid-container">
       <div class="dark-grid grid1">
         <img class="container-img" src="./images/puzzle.jpg" alt="puzzle" width="auto">
       </div>
 
       <div class="shiny-grid grid-txt grid2" id="education">
-        <h1>Ausbildung</h1>
+        <h1 data-de="Ausbildung" data-en="Education">Ausbildung</h1>
         <!-- <a href="#">Learn more</a> -->
         <ul class="cv-items">
           <li>
-          Master of Science <br>
-          <b>IT-Management and Information Systems</b><br>
-          09/2015 - 06/2018<br>
-          FHDW-Paderborn & Teckentrup
+            <div class="lang-de">Master of Science <br>
+            <b>IT-Management and Information Systems</b><br>
+            09/2015 - 06/2018<br>
+            FHDW-Paderborn &amp; Teckentrup</div>
+            <div class="lang-en">Master of Science <br>
+            <b>IT Management and Information Systems</b><br>
+            09/2015 - 06/2018<br>
+            FHDW-Paderborn &amp; Teckentrup</div>
         </li>
         <li>
-          Bachelor of Engineering<br>
-          Wirtschaftsingenieurwesen<br>
-          08/2010 - 01/2014<br> 
-          Fachhochschule Bielefeld  & Teckentrup
+            <div class="lang-de">Bachelor of Engineering<br>
+            Wirtschaftsingenieurwesen<br>
+            08/2010 - 01/2014<br>
+            Fachhochschule Bielefeld &amp; Teckentrup</div>
+            <div class="lang-en">Bachelor of Engineering<br>
+            Industrial Engineering<br>
+            08/2010 - 01/2014<br>
+            Bielefeld University of Applied Sciences &amp; Teckentrup</div>
         </li>
           <li>
-          Allgemeine Hochschulreife<br>
-          2001 - 2010<br>
-          Janusz Korczak - Gesamtschule Gütersloh & Teckentrup
+            <div class="lang-de">Allgemeine Hochschulreife<br>
+            2001 - 2010<br>
+            Janusz Korczak - Gesamtschule Gütersloh &amp; Teckentrup</div>
+            <div class="lang-en">General Higher Education Entrance Qualification<br>
+            2001 - 2010<br>
+            Janusz Korczak Comprehensive School Gütersloh &amp; Teckentrup</div>
         </li>
         </ul>
       </div>
 
       <div class="dark-grid grid-txt grid3">
-        <h1>Berufserfahrung</h1>
+        <h1 data-de="Berufserfahrung" data-en="Professional Experience">Berufserfahrung</h1>
         <!-- <a href="#">Learn more</a> -->
         <ul class="cv-items">
           <li>
-          <b>Senior Business Consultant SAP VC/CPQ</b><br>
-          Wilo Group · Vollzeit<br>
-          12/2021 - heute · Dortmund, Nordrhein-Westfalen<br>
+            <div class="lang-de"><b>Senior Business Consultant SAP VC/CPQ</b><br>
+            Wilo Group · Vollzeit<br>
+            12/2021 - heute · Dortmund, Nordrhein-Westfalen<br></div>
+            <div class="lang-en"><b>Senior Business Consultant SAP VC/CPQ</b><br>
+            Wilo Group · Full-time<br>
+            12/2021 - present · Dortmund, North Rhine-Westphalia<br></div>
           </li>
           <li>
-          <b>Leitung SAP LO-VC / ETO</b><br>
-          Teckentrup GmbH &amp; Co. KG · Vollzeit<br>
-          06/2017 - 12/2021 · Verl, Nordrhein-Westfalen
+            <div class="lang-de"><b>Leitung SAP LO-VC / ETO</b><br>
+            Teckentrup GmbH &amp; Co. KG · Vollzeit<br>
+            06/2017 - 12/2021 · Verl, Nordrhein-Westfalen</div>
+            <div class="lang-en"><b>Head of SAP LO-VC / ETO</b><br>
+            Teckentrup GmbH &amp; Co. KG · Full-time<br>
+            06/2017 - 12/2021 · Verl, North Rhine-Westphalia</div>
           </li>
           <li>
-          <b>Leitung SAP LO-VC / PDM</b><br>
-          Teckentrup GmbH &amp; Co. KG<br>
-          01/2014 - 06/2017 · Verl, Nordrhein-Westfalen
+            <div class="lang-de"><b>Leitung SAP LO-VC / PDM</b><br>
+            Teckentrup GmbH &amp; Co. KG<br>
+            01/2014 - 06/2017 · Verl, Nordrhein-Westfalen</div>
+            <div class="lang-en"><b>Head of SAP LO-VC / PDM</b><br>
+            Teckentrup GmbH &amp; Co. KG<br>
+            01/2014 - 06/2017 · Verl, North Rhine-Westphalia</div>
           </li>
         </ul>
       </div>
@@ -347,59 +385,80 @@
 
     <!-- ===== Projekte ===== -->
     <details open>
-      <summary><h1 class="section-title">Ausgewählte Projekte</h1></summary>
+      <summary><h1 class="section-title" data-de="Ausgewählte Projekte" data-en="Selected Projects">Ausgewählte Projekte</h1></summary>
       <div class="grid-one-col" id="projekte">
       <div class="dark-grid prj-img">
         <img class="container-img" src="./images/experience.jpg" alt="experience" width="auto">
       </div>
       <div class="dark-grid grid-txt prj-txt prj-txt-bottom">
-        <h1>Ausgewählte Projekte</h1>
+        <h1 data-de="Ausgewählte Projekte" data-en="Selected Projects">Ausgewählte Projekte</h1>
         
         <!-- Filter Chips -->
         <div class="prj-filter-wrap">
-          <button class="prj-filter-chip active" data-filter="alle">Alle</button>
+          <button class="prj-filter-chip active" data-filter="alle" data-de="Alle" data-en="All">Alle</button>
           <button class="prj-filter-chip" data-filter="vc">SAP VC</button>
           <button class="prj-filter-chip" data-filter="cpq">CPQ</button>
-          <button class="prj-filter-chip" data-filter="agil">Agil</button>
+          <button class="prj-filter-chip" data-filter="agil" data-de="Agil" data-en="Agile">Agil</button>
           <button class="prj-filter-chip" data-filter="po">Product Owner</button>
           <button class="prj-filter-chip" data-filter="eto">ETO</button>
         </div>
 
         <ul class="cv-items" id="prj-list-all">
           <li data-filter="cpq po">
-          <b>CPQ-Einführung SiBoost 2.0 (Wilo Gruppe, international)</b><br>
-          04/2025 - 04/2026<br>
-          Work-Package-Owner für Interfaces &amp; Data Sources sowie Price and Product Comparison in SAP CPQ
+            <div class="lang-de"><b>CPQ-Einführung SiBoost 2.0 (Wilo Gruppe, international)</b><br>
+            04/2025 - 04/2026<br>
+            Work-Package-Owner für Interfaces &amp; Data Sources sowie Price and Product Comparison in SAP CPQ</div>
+            <div class="lang-en"><b>CPQ rollout SiBoost 2.0 (Wilo Group, international)</b><br>
+            04/2025 - 04/2026<br>
+            Work package owner for Interfaces &amp; Data Sources and Price and Product Comparison in SAP CPQ</div>
           </li>
           <li data-filter="vc cpq eto">
-          <b>Spaix/VSX-Anbindung an SAP CPQ Quote 2.0</b><br>
-          04/2025 - 04/2026<br>
-          Konzeption der Integration externer Konfiguratoren (ETO/CTO/CTO+/KMAT/MSO) und Moderation internationaler Workshops (DE/FR)
+            <div class="lang-de"><b>Spaix/VSX-Anbindung an SAP CPQ Quote 2.0</b><br>
+            04/2025 - 04/2026<br>
+            Konzeption der Integration externer Konfiguratoren (ETO/CTO/CTO+/KMAT/MSO) und Moderation internationaler Workshops (DE/FR)</div>
+            <div class="lang-en"><b>Spaix/VSX integration with SAP CPQ Quote 2.0</b><br>
+            04/2025 - 04/2026<br>
+            Concept design for integrating external configurators (ETO/CTO/CTO+/KMAT/MSO) and facilitation of international workshops (DE/FR)</div>
           </li>
           <li data-filter="vc">
-          <b>Analyse und Weiterentwicklung bestehender Konfigurationslogiken</b><br>
-          12/2021 - 03/2025<br>
-          Analyse und Weiterentwicklung bestehender VC-Modelle im Hinblick auf Advanced Variant Configuration sowie Upgrade auf neueste EHP-Versionen
+            <div class="lang-de"><b>Analyse und Weiterentwicklung bestehender Konfigurationslogiken</b><br>
+            12/2021 - 03/2025<br>
+            Analyse und Weiterentwicklung bestehender VC-Modelle im Hinblick auf Advanced Variant Configuration sowie Upgrade auf neueste EHP-Versionen</div>
+            <div class="lang-en"><b>Analysis and enhancement of existing configuration logic</b><br>
+            12/2021 - 03/2025<br>
+            Analysis and enhancement of existing VC models for Advanced Variant Configuration, including upgrades to latest EHP releases</div>
           </li>
           <li data-filter="cpq">
-          <b>Anpassung High-Level-Konfiguration für CPQ (Encoway)</b><br>
-          01/2021 - 12/2021<br>
-          Konzeption und Umsetzung der Konfigurationslogik für den Übergang in eine CPQ-gestützte Angebotswelt
+            <div class="lang-de"><b>Anpassung High-Level-Konfiguration für CPQ (Encoway)</b><br>
+            01/2021 - 12/2021<br>
+            Konzeption und Umsetzung der Konfigurationslogik für den Übergang in eine CPQ-gestützte Angebotswelt</div>
+            <div class="lang-en"><b>High-level configuration adaptation for CPQ (Encoway)</b><br>
+            01/2021 - 12/2021<br>
+            Design and implementation of configuration logic for the transition to a CPQ-driven quoting landscape</div>
           </li>
           <li data-filter="agil po">
-          <b>Einführung von Agilität in der Abteilung LO-VC</b><br>
-          04/2020 - 12/2020<br>
-          Etablierung agiler Arbeitsweisen zur beschleunigten Umsetzung von Konfigurationsanforderungen
+            <div class="lang-de"><b>Einführung von Agilität in der Abteilung LO-VC</b><br>
+            04/2020 - 12/2020<br>
+            Etablierung agiler Arbeitsweisen zur beschleunigten Umsetzung von Konfigurationsanforderungen</div>
+            <div class="lang-en"><b>Introduction of agile practices in the LO-VC department</b><br>
+            04/2020 - 12/2020<br>
+            Establishment of agile ways of working to accelerate delivery of configuration requirements</div>
           </li>
           <li data-filter="eto po">
-          <b>Optimierung der Preispolitik im ETO-Prozess</b><br>
-          04/2020 - 12/2020<br>
-          Strukturierung von Preislogiken und Harmonisierung der Regeln für komplexe Variantenangebote
+            <div class="lang-de"><b>Optimierung der Preispolitik im ETO-Prozess</b><br>
+            04/2020 - 12/2020<br>
+            Strukturierung von Preislogiken und Harmonisierung der Regeln für komplexe Variantenangebote</div>
+            <div class="lang-en"><b>Optimization of pricing policy in the ETO process</b><br>
+            04/2020 - 12/2020<br>
+            Structuring pricing logic and harmonizing rules for complex variant quotations</div>
           </li>
           <li data-filter="po">
-          <b>Stammdatenbereinigung als Product Owner</b><br>
-          04/2019 - 12/2019<br>
-          Qualitätssicherung und Bereinigung von Stücklisten und Arbeitsplänen als Basis für stabile End-to-End-Prozesse
+            <div class="lang-de"><b>Stammdatenbereinigung als Product Owner</b><br>
+            04/2019 - 12/2019<br>
+            Qualitätssicherung und Bereinigung von Stücklisten und Arbeitsplänen als Basis für stabile End-to-End-Prozesse</div>
+            <div class="lang-en"><b>Master data cleansing as Product Owner</b><br>
+            04/2019 - 12/2019<br>
+            Quality assurance and cleanup of BOMs and routings as a foundation for stable end-to-end processes</div>
           </li>
         </ul>
       </div>
@@ -408,86 +467,86 @@
 
     <!-- ===== Skills ===== -->
       <details open>
-        <summary><h1 class="section-title">Stärken & Kompetenzen</h1></summary>
+        <summary><h1 class="section-title" data-de="Stärken & Kompetenzen" data-en="Strengths & Competencies">Stärken & Kompetenzen</h1></summary>
         <div class="dark-grid skills-banner">
         <img class="container-img" src="./images/growth.jpg" alt="flower_growth" width="auto">
       </div>
         <div class="grid-container grid-skill" id="staerken">
         <div class="grid-row-span-2 shiny-grid grid-staerke">
-          <h1>Stärken</h1>
+          <h1 data-de="Stärken" data-en="Strengths">Stärken</h1>
           <div class="grid-row-3 skill-row">
-          <div>Führungskompetenz</div>
-          <span class="skill-level level-4" aria-label="Führungskompetenz, sehr ausgeprägt">Sehr ausgeprägt</span>
+          <div data-de="Führungskompetenz" data-en="Leadership">Führungskompetenz</div>
+          <span class="skill-level level-4" aria-label="Führungskompetenz, sehr ausgeprägt" data-de="Sehr ausgeprägt" data-en="Highly developed" data-aria-de="Führungskompetenz, sehr ausgeprägt" data-aria-en="Leadership, highly developed">Sehr ausgeprägt</span>
         </div>
         <div class="grid-row-3 skill-row">
-        <div>Scrum als Product Owner</div>
-        <span class="skill-level level-3" aria-label="Scrum als Product Owner, praxisstark">Praxisstark</span>
+        <div data-de="Scrum als Product Owner" data-en="Scrum as Product Owner">Scrum als Product Owner</div>
+        <span class="skill-level level-3" aria-label="Scrum als Product Owner, praxisstark" data-de="Praxisstark" data-en="Strong in practice" data-aria-de="Scrum als Product Owner, praxisstark" data-aria-en="Scrum as Product Owner, strong in practice">Praxisstark</span>
       </div>
       <div class="grid-row-3 skill-row">
       <div>Jira/Confluence</div>
-      <span class="skill-level level-2" aria-label="Jira und Confluence, sicher in der Praxis">Sicher in der Praxis</span>
+      <span class="skill-level level-2" aria-label="Jira und Confluence, sicher in der Praxis" data-de="Sicher in der Praxis" data-en="Confident in practice" data-aria-de="Jira und Confluence, sicher in der Praxis" data-aria-en="Jira and Confluence, confident in practice">Sicher in der Praxis</span>
     </div>
     <div class="grid-row-3 skill-row">
-      <div>Komplexitätsmanagement</div>
-      <span class="skill-level level-4" aria-label="Komplexitätsmanagement, sehr ausgeprägt">Sehr ausgeprägt</span>
+      <div data-de="Komplexitätsmanagement" data-en="Complexity Management">Komplexitätsmanagement</div>
+      <span class="skill-level level-4" aria-label="Komplexitätsmanagement, sehr ausgeprägt" data-de="Sehr ausgeprägt" data-en="Highly developed" data-aria-de="Komplexitätsmanagement, sehr ausgeprägt" data-aria-en="Complexity management, highly developed">Sehr ausgeprägt</span>
     </div>
   </div>
         <div class="grid-row-span-2 dark-grid grid-it-staerke">
-          <h1>IT-Stärken</h1>
+          <h1 data-de="IT-Stärken" data-en="Technical Skills">IT-Stärken</h1>
 
           <div class="grid-row-3-small skill-row">
             <div>SAP VC/ETO</div>
-            <span class="skill-level level-4" aria-label="SAP VC/ETO, Kernkompetenz">Kernkompetenz</span>
+            <span class="skill-level level-4" aria-label="SAP VC/ETO, Kernkompetenz" data-de="Kernkompetenz" data-en="Core expertise" data-aria-de="SAP VC/ETO, Kernkompetenz" data-aria-en="SAP VC/ETO, core expertise">Kernkompetenz</span>
           </div>
           <div class="grid-row-3-small skill-row">
           <div>SAP CPQ</div>
-          <span class="skill-level level-4" aria-label="SAP CPQ, Kernkompetenz">Kernkompetenz</span>
+          <span class="skill-level level-4" aria-label="SAP CPQ, Kernkompetenz" data-de="Kernkompetenz" data-en="Core expertise" data-aria-de="SAP CPQ, Kernkompetenz" data-aria-en="SAP CPQ, core expertise">Kernkompetenz</span>
         </div>
         <div class="grid-row-3-small skill-row">
         <div>SAP MM/PP</div>
-        <span class="skill-level level-3" aria-label="SAP MM/PP, sehr gute Praxis">Sehr gute Praxis</span>
+        <span class="skill-level level-3" aria-label="SAP MM/PP, sehr gute Praxis" data-de="Sehr gute Praxis" data-en="Very strong practice" data-aria-de="SAP MM/PP, sehr gute Praxis" data-aria-en="SAP MM/PP, very strong practice">Sehr gute Praxis</span>
       </div>
       <div class="grid-row-3-small skill-row">
         <div>Office 365</div>
-        <span class="skill-level level-3" aria-label="Office 365, sehr gute Praxis">Sehr gute Praxis</span>
+        <span class="skill-level level-3" aria-label="Office 365, sehr gute Praxis" data-de="Sehr gute Praxis" data-en="Very strong practice" data-aria-de="Office 365, sehr gute Praxis" data-aria-en="Office 365, very strong practice">Sehr gute Praxis</span>
       </div>
       <div class="grid-row-3-small skill-row">
         <div>Python</div>
-        <span class="skill-level level-2" aria-label="Python, gute Praxis">Gute Praxis</span>
+        <span class="skill-level level-2" aria-label="Python, gute Praxis" data-de="Gute Praxis" data-en="Good practice" data-aria-de="Python, gute Praxis" data-aria-en="Python, good practice">Gute Praxis</span>
       </div>
       <div class="grid-row-3-small skill-row">
         <div>HTML/CSS</div>
-        <span class="skill-level level-2" aria-label="HTML und CSS, gute Praxis">Gute Praxis</span>
+        <span class="skill-level level-2" aria-label="HTML und CSS, gute Praxis" data-de="Gute Praxis" data-en="Good practice" data-aria-de="HTML und CSS, gute Praxis" data-aria-en="HTML and CSS, good practice">Gute Praxis</span>
       </div>
       <div class="grid-row-3-small skill-row">
         <div>Javascript</div>
-        <span class="skill-level level-2" aria-label="JavaScript, gute Praxis">Gute Praxis</span>
+        <span class="skill-level level-2" aria-label="JavaScript, gute Praxis" data-de="Gute Praxis" data-en="Good practice" data-aria-de="JavaScript, gute Praxis" data-aria-en="JavaScript, good practice">Gute Praxis</span>
       </div>
         </div>
         <div class="dark-grid grid-sprache">
-          <h1>Sprachen</h1>
+          <h1 data-de="Sprachen" data-en="Languages">Sprachen</h1>
           <div class="grid-row-3-small skill-row">
-            <div>Deutsch · Muttersprachler (C2)</div>
-            <span class="skill-level level-4" aria-label="Deutsch, Muttersprachler, C2-Niveau">Muttersprachler</span>
+            <div data-de="Deutsch · Muttersprachler (C2)" data-en="German · Native (C2)">Deutsch · Muttersprachler (C2)</div>
+            <span class="skill-level level-4" aria-label="Deutsch, Muttersprachler, C2-Niveau" data-de="Muttersprachler" data-en="Native" data-aria-de="Deutsch, Muttersprachler, C2-Niveau" data-aria-en="German, native speaker, C2">Muttersprachler</span>
           </div>
           <div class="grid-row-3-small skill-row">
-          <div>Englisch · Business (C1)</div>
-          <span class="skill-level level-3" aria-label="Englisch, Business-fließend, C1-Niveau">Business-fließend</span>
+          <div data-de="Englisch · Business (C1)" data-en="English · Business (C1)">Englisch · Business (C1)</div>
+          <span class="skill-level level-3" aria-label="Englisch, Business-fließend, C1-Niveau" data-de="Business-fließend" data-en="Business fluent" data-aria-de="Englisch, Business-fließend, C1-Niveau" data-aria-en="English, business fluent, C1">Business-fließend</span>
         </div>
         </div>
         <div class="shiny-grid grid-interesse">
-          <h1>Interessen</h1>
+          <h1 data-de="Interessen" data-en="Interests">Interessen</h1>
           <div class="grid-2x2">
           <div class="grid-row-2">
-            <div>Fußball</div>
+            <div data-de="Fußball" data-en="Football">Fußball</div>
             <img src="./images/football-ci.svg" alt="Fußball" height="40px" width="auto">
           </div>
           <div class="grid-row-2">
-          <div>Lesen</div>
+          <div data-de="Lesen" data-en="Reading">Lesen</div>
           <img src="./images/book-ci.svg" alt="Lesen" height="40px" width="auto">
         </div>
         <div class="grid-row-2">
-          <div>3D-Druck</div>
+          <div data-de="3D-Druck" data-en="3D Printing">3D-Druck</div>
           <img src="./images/printer-ci.svg" alt="3D-Druck" height="40px" width="auto">
         </div>
         <div class="grid-row-2">
@@ -520,7 +579,8 @@
         </footer>
       </div>
 
-      <a href="#" class="back-to-top" aria-label="Zum Seitenanfang">↑</a>
+      <a href="#" class="back-to-top" aria-label="Zum Seitenanfang" data-aria-de="Zum Seitenanfang" data-aria-en="Back to top">↑</a>
+      <script src="./js/i18n.js"></script>
       <script src="./js/mini-configurator.js"></script>
       <script src="./js/vc-tree-artifact.js"></script>
       <script>

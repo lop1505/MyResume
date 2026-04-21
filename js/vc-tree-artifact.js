@@ -59,18 +59,21 @@
   if (openBtn) {
     openBtn.addEventListener('click', function () {
       const isCollapsed = root.classList.contains('tree-collapsed');
+      const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+      const openLabel = lang === 'en' ? (openBtn.dataset.openEn || 'Open Feature Tree') : (openBtn.dataset.openDe || 'Merkmalsbaum öffnen');
+      const closeLabel = lang === 'en' ? (openBtn.dataset.closeEn || 'Close Feature Tree') : (openBtn.dataset.closeDe || 'Merkmalsbaum schließen');
 
       if (isCollapsed) {
         root.classList.remove('tree-collapsed');
         root.setAttribute('aria-hidden', 'false');
         openBtn.setAttribute('aria-expanded', 'true');
-        openBtn.textContent = 'Merkmalsbaum schließen';
+        openBtn.textContent = closeLabel;
         root.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
         root.classList.add('tree-collapsed');
         root.setAttribute('aria-hidden', 'true');
         openBtn.setAttribute('aria-expanded', 'false');
-        openBtn.textContent = 'Merkmalsbaum öffnen';
+        openBtn.textContent = openLabel;
       }
     });
   }
