@@ -9,6 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      (function () {
+        const storageKey = 'resume-theme';
+        let storedTheme = null;
+        try {
+          storedTheme = localStorage.getItem(storageKey);
+        } catch (error) {
+          storedTheme = null;
+        }
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', initialTheme);
+      })();
+    </script>
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
@@ -29,8 +43,8 @@
           <li><a href="#staerken" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Stärken</a></li>
         </ul>
   
-        <div class="col-md-1">
-          <!-- Leerer Container, um links und rechts gleich groß zu halten-->
+        <div class="col-md-1 d-flex justify-content-md-end justify-content-center px-2">
+          <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Zum dunklen Design wechseln" aria-pressed="false">Dunkel</button>
         </div>
       </header>
     </div>
@@ -465,6 +479,57 @@
       </script>
       <script>
         document.addEventListener('DOMContentLoaded', () => {
+          const storageKey = 'resume-theme';
+          const toggleButton = document.getElementById('theme-toggle');
+          const prefersColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+          const getStoredTheme = () => {
+            try {
+              return localStorage.getItem(storageKey);
+            } catch (error) {
+              return null;
+            }
+          };
+
+          const setStoredTheme = (theme) => {
+            try {
+              localStorage.setItem(storageKey, theme);
+            } catch (error) {
+              // Ignore storage errors, theme still applies for current session.
+            }
+          };
+
+          const applyTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            if (!toggleButton) return;
+            const isDark = theme === 'dark';
+            toggleButton.textContent = isDark ? 'Hell' : 'Dunkel';
+            toggleButton.setAttribute('aria-pressed', String(isDark));
+            toggleButton.setAttribute('aria-label', isDark ? 'Zum hellen Design wechseln' : 'Zum dunklen Design wechseln');
+          };
+
+          applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+          if (toggleButton) {
+            toggleButton.addEventListener('click', () => {
+              const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+              const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+              applyTheme(nextTheme);
+              setStoredTheme(nextTheme);
+            });
+          }
+
+          const handleSystemThemeChange = (event) => {
+            if (getStoredTheme()) return;
+            applyTheme(event.matches ? 'dark' : 'light');
+          };
+
+          if (typeof prefersColorScheme.addEventListener === 'function') {
+            prefersColorScheme.addEventListener('change', handleSystemThemeChange);
+          } else if (typeof prefersColorScheme.addListener === 'function') {
+            prefersColorScheme.addListener(handleSystemThemeChange);
+          }
+
           const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
           const heroTags = document.querySelectorAll('.hero-tag');

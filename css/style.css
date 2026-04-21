@@ -13,8 +13,40 @@
     --font-mono: 'DM Mono', monospace;
     --font-body: 'Instrument Sans', sans-serif;
 
+    --page-bg: var(--paper);
+    --page-fg: var(--ink);
+    --muted-text: var(--mid);
+    --header-bg: var(--slate);
+    --header-link: var(--warm-wh);
+    --footer-fg: var(--mid);
+    --button-bg: var(--slate);
+    --button-fg: var(--warm-wh);
+    --surface-dark-bg: linear-gradient(160deg, #26262a 0%, #2f2f34 100%);
+    --surface-dark-fg: var(--warm-wh);
+    --surface-dark-border: #3a3a3f;
+    --surface-light-bg: var(--warm-wh);
+    --surface-light-fg: var(--ink);
+    --surface-light-border: var(--rule);
+
     --main-bg-color: var(--slate);
     --shiny-bg-color: var(--warm-wh);
+}
+
+html[data-theme='dark']{
+    --page-bg: var(--slate);
+    --page-fg: var(--warm-wh);
+    --muted-text: #c7c2b9;
+    --header-bg: #1e1f22;
+    --header-link: var(--warm-wh);
+    --footer-fg: #b8b2a8;
+    --button-bg: var(--paper);
+    --button-fg: var(--ink);
+    --surface-dark-bg: linear-gradient(160deg, #efeae1 0%, #e7dfd2 100%);
+    --surface-dark-fg: var(--ink);
+    --surface-dark-border: #d8d0c4;
+    --surface-light-bg: #303036;
+    --surface-light-fg: var(--warm-wh);
+    --surface-light-border: #4b4c52;
 }
 
 html{
@@ -22,8 +54,8 @@ html{
 }
 
 body{
-    background-color: var(--paper);
-    color: var(--ink);
+    background-color: var(--page-bg);
+    color: var(--page-fg);
     font-family: var(--font-body);
 }
 
@@ -114,16 +146,35 @@ img{
 }
 
 .header-bg-color{
-    background-color: var(--slate);
+    background-color: var(--header-bg);
     border-bottom: 1px solid var(--copper-dk);
 }
 
 .header-bg-color .nav-link{
-    color: var(--warm-wh) !important;
+    color: var(--header-link) !important;
     font-family: var(--font-mono);
     font-size: 0.84rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+}
+
+.theme-toggle-btn{
+    border: 1px solid var(--copper);
+    background: transparent;
+    color: var(--header-link);
+    border-radius: 999px;
+    padding: 0.4rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus{
+    background-color: var(--copper);
+    color: var(--paper);
 }
 
 .header-bg-color .nav-link:hover,
@@ -179,14 +230,14 @@ details summary:hover .section-title {
     font-family: var(--font-display);
     font-size: 3.5rem;
     font-weight: 300;
-    color: var(--ink);
+    color: var(--page-fg);
     line-height: 1;
 }
 
 .header-font{
     font-family: var(--font-display);
     font-size: 2.4rem;
-    color: var(--slate);
+    color: var(--page-fg);
     line-height: 1.2;
     max-width: 30ch;
     margin-left: auto;
@@ -197,7 +248,7 @@ details summary:hover .section-title {
     font-family: var(--font-mono);
     font-weight: 400;
     font-size: 1rem;
-    color: var(--mid);
+    color: var(--muted-text);
     text-transform: uppercase;
     letter-spacing: 0.07em;
 }
@@ -205,7 +256,7 @@ details summary:hover .section-title {
 .sub-header-font{
     font-family: var(--font-body);
     font-size: 1.05rem;
-    color: var(--ink);
+    color: var(--page-fg);
     line-height: 1.7;
 }
 
@@ -859,17 +910,17 @@ details summary:hover .section-title {
 }
 
 .dark-grid{
-    background: linear-gradient(160deg, #26262a 0%, #2f2f34 100%);
-    color: var(--warm-wh);
+    background: var(--surface-dark-bg);
+    color: var(--surface-dark-fg);
     border-radius: 0.4rem;
-    border: 1px solid #3a3a3f;
+    border: 1px solid var(--surface-dark-border);
 }
 
 .shiny-grid{
-    background-color: var(--shiny-bg-color);
-    color: var(--ink);
+    background-color: var(--surface-light-bg);
+    color: var(--surface-light-fg);
     border-radius: 0.4rem;
-    border: 1px solid var(--rule);
+    border: 1px solid var(--surface-light-border);
 }
 
 .grid-row-3 > div:first-child,
@@ -888,7 +939,7 @@ details summary:hover .section-title {
 .container footer span,
 .container footer a{
     font-family: var(--font-mono);
-    color: var(--mid) !important;
+    color: var(--footer-fg) !important;
 }
 
 .container footer a:hover{
@@ -899,8 +950,8 @@ details summary:hover .section-title {
     margin-top: 0.4rem;
     border: 1px solid var(--copper);
     border-radius: 999px;
-    background-color: var(--slate);
-    color: var(--warm-wh);
+    background-color: var(--button-bg);
+    color: var(--button-fg);
     padding: 0.6rem 1rem;
     font-family: var(--font-mono);
     font-size: 0.78rem;
@@ -1171,7 +1222,7 @@ details summary:hover .section-title {
 
 .cfg-open-btn {
     background-color: transparent;
-    color: var(--slate);
+    color: var(--page-fg);
 }
 
 .cfg-open-btn:hover,
