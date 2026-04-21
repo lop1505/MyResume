@@ -90,6 +90,50 @@ img{
     color: var(--copper-lt) !important;
 }
 
+.scroll-progress{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background-color: var(--copper);
+    width: 0%;
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+}
+
+/* Collapsible details/summary sections */
+details {
+    margin-bottom: 1.5rem;
+}
+
+details summary {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    text-align: center;
+}
+
+details summary .section-title {
+    display: inline;
+    cursor: pointer;
+    margin-bottom: 0;
+    transition: color 0.2s ease;
+}
+
+details summary:hover .section-title {
+    color: var(--copper);
+}
+
+/* Print: show all details and hide summary markers */
+@media print {
+    details {
+        display: block;
+    }
+    details summary {
+        display: none;
+    }
+}
+
 .header-font-bold{
     font-family: var(--font-display);
     font-size: 3.5rem;

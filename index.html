@@ -35,6 +35,9 @@
       </header>
     </div>
 
+    <!-- ===== Scroll Progress ===== -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
     <!-- ===== Landing-Site ===== -->
     <div class="px-4 pt-5 my-5 text-center" id="aboutme">
       <p class="hero-kicker mb-2">Senior Business Consultant · SAP VC / CPQ · Wilo Group</p>
@@ -64,8 +67,133 @@
       </div>
     </div>
 
+    <!-- === HIER STARTET DER KONFIGURATOR === -->
+    <section id="cfg-mini-configurator" class="cfg-wrap cfg-collapsed" aria-labelledby="cfg-title" aria-hidden="true">
+      <div class="cfg-shell">
+        <div class="cfg-card">
+          <h2 id="cfg-title" class="cfg-title">VC/CPQ Mini-Konfigurator</h2>
+          <p class="cfg-intro">
+            Ein kleiner Meta-Spaß auf dieser Seite, aber mit echter Regel-Engine im Hintergrund.
+            Constraints sperren inkompatible Optionen live, Preisfindung aktualisiert sich bei jeder
+            Änderung. Genau so arbeitet SAP VC. Nur kleiner. Und ehrlicher.
+          </p>
+
+          <div class="cfg-grid">
+            <div class="cfg-row">
+              <span class="cfg-label">Merkmal: Einsatzgebiet (Mehrfachauswahl)</span>
+              <div class="cfg-chip-wrap" id="cfg-domain-wrap">
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP VC" />SAP VC</label>
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP CPQ" />SAP CPQ</label>
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="JavaScript / Automation" />JavaScript / Automation</label>
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="Office 365" />Office 365</label>
+              </div>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-level">Merkmal: Erfahrungslevel</label>
+              <select id="cfg-level" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+                <option value="Lead">Lead</option>
+                <option value="Veteran">Der, der 2014 dabei war</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-industry">Merkmal: Branche</label>
+              <select id="cfg-industry" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Maschinenbau">Maschinenbau</option>
+                <option value="Pumpenbau">Pumpenbau</option>
+                <option value="TuerenTore">Türen & Tore</option>
+                <option value="Automotive">Automotive</option>
+                <option value="AnythingETO">Anything ETO</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-role">Merkmal: Rolle</label>
+              <select id="cfg-role" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Business Consultant">Business Consultant</option>
+                <option value="Technical Consultant">Technical Consultant</option>
+                <option value="Product Owner">Product Owner</option>
+                <option value="Projektleiter">Projektleiter</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-location">Merkmal: Standort</label>
+              <select id="cfg-location" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Remote">Remote</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Vor Ort (Umkreis Soest)">Vor Ort (Umkreis Soest)</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-humor">Merkmal: Humor-Level</label>
+              <select id="cfg-humor" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Kein Smalltalk">Kein Smalltalk</option>
+                <option value="Professionell">Professionell</option>
+                <option value="Passt zur Kaffeekueche">Passt zur Kaffeeküche</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-coffee">Merkmal: Koffein-Bedarf</label>
+              <select id="cfg-coffee" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="1">☕</option>
+                <option value="2">☕☕</option>
+                <option value="3">☕☕☕</option>
+                <option value="4">Nicht vor 10 Uhr</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cfg-card cfg-side" aria-live="polite">
+          <div class="cfg-stat">
+            <div class="cfg-stat-label">Match-Score</div>
+            <div id="cfg-score" class="cfg-stat-value">0%</div>
+            <div class="cfg-meter"><span id="cfg-meter"></span></div>
+          </div>
+
+          <div class="cfg-stat">
+            <div class="cfg-stat-label">Indikativer Tagessatz</div>
+            <div id="cfg-rate" class="cfg-stat-value">-</div>
+          </div>
+
+          <div class="cfg-stat">
+            <div class="cfg-stat-label">Aktive Meldungen</div>
+            <ul id="cfg-messages" class="cfg-msg"></ul>
+          </div>
+
+          <div id="cfg-reveal" class="cfg-reveal">
+            <h3>🎯 Patrick Lohmann · Senior Business Consultant · SAP VC/CPQ · Wilo Group</h3>
+            <div class="cfg-actions">
+              <a class="cfg-link" href="https://www.linkedin.com/in/patrick-l-bba54b171/" target="_blank" rel="noopener noreferrer">
+                LinkedIn öffnen
+              </a>
+            </div>
+          </div>
+
+          <div class="cfg-actions">
+            <button id="cfg-reset" class="cfg-btn" type="button">Reset</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <!-- === HIER ENDET DER KONFIGURATOR === -->
+
     <!-- ===== Experience/Education ===== -->
-    <div class="grid-container">
+    <details open>
+      <summary><h1 class="section-title">Ausbildung & Erfahrung</h1></summary>
+      <div class="grid-container">
       <div class="dark-grid grid1">
         <img class="container-img" src="./images/puzzle.jpg" alt="puzzle" width="auto">
       </div>
@@ -119,7 +247,11 @@
         <img class="container-img" src="./images/computer_notebook.jpg" alt="computer_notebook" width="auto">
       </div>
       </div>
+    </details>
+
     <!-- ===== Projekte ===== -->
+    <details open>
+      <summary><h1 class="section-title">Ausgewählte Projekte</h1></summary>
       <div class="grid-one-col" id="projekte">
       <div class="dark-grid prj-img">
         <img class="container-img" src="./images/experience.jpg" alt="experience" width="auto">
@@ -173,132 +305,12 @@
         <img class="container-img" src="./images/growth.jpg" alt="flower_growth" width="auto">
       </div>
       </div>
+    </details>
 
-      <!-- === HIER STARTET DER KONFIGURATOR === -->
-      <section id="cfg-mini-configurator" class="cfg-wrap cfg-collapsed" aria-labelledby="cfg-title" aria-hidden="true">
-        <div class="cfg-shell">
-          <div class="cfg-card">
-            <h2 id="cfg-title" class="cfg-title">VC/CPQ Mini-Konfigurator</h2>
-            <p class="cfg-intro">
-              Ein kleiner Meta-Spaß auf dieser Seite, aber mit echter Regel-Engine im Hintergrund.
-              Constraints sperren inkompatible Optionen live, Preisfindung aktualisiert sich bei jeder
-              Änderung. Genau so arbeitet SAP VC. Nur kleiner. Und ehrlicher.
-            </p>
-
-            <div class="cfg-grid">
-              <div class="cfg-row">
-                <span class="cfg-label">Merkmal: Einsatzgebiet (Mehrfachauswahl)</span>
-                <div class="cfg-chip-wrap" id="cfg-domain-wrap">
-                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP VC" />SAP VC</label>
-                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP CPQ" />SAP CPQ</label>
-                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="JavaScript / Automation" />JavaScript / Automation</label>
-                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="Office 365" />Office 365</label>
-                </div>
-              </div>
-
-              <div class="cfg-row">
-                <label class="cfg-label" for="cfg-level">Merkmal: Erfahrungslevel</label>
-                <select id="cfg-level" class="cfg-select">
-                  <option value="">Bitte wählen</option>
-                  <option value="Junior">Junior</option>
-                  <option value="Senior">Senior</option>
-                  <option value="Lead">Lead</option>
-                  <option value="Veteran">Der, der 2014 dabei war</option>
-                </select>
-              </div>
-
-              <div class="cfg-row">
-                <label class="cfg-label" for="cfg-industry">Merkmal: Branche</label>
-                <select id="cfg-industry" class="cfg-select">
-                  <option value="">Bitte wählen</option>
-                  <option value="Maschinenbau">Maschinenbau</option>
-                  <option value="Pumpenbau">Pumpenbau</option>
-                  <option value="TuerenTore">Türen & Tore</option>
-                  <option value="Automotive">Automotive</option>
-                  <option value="AnythingETO">Anything ETO</option>
-                </select>
-              </div>
-
-              <div class="cfg-row">
-                <label class="cfg-label" for="cfg-role">Merkmal: Rolle</label>
-                <select id="cfg-role" class="cfg-select">
-                  <option value="">Bitte wählen</option>
-                  <option value="Business Consultant">Business Consultant</option>
-                  <option value="Technical Consultant">Technical Consultant</option>
-                  <option value="Product Owner">Product Owner</option>
-                  <option value="Projektleiter">Projektleiter</option>
-                </select>
-              </div>
-
-              <div class="cfg-row">
-                <label class="cfg-label" for="cfg-location">Merkmal: Standort</label>
-                <select id="cfg-location" class="cfg-select">
-                  <option value="">Bitte wählen</option>
-                  <option value="Remote">Remote</option>
-                  <option value="Hybrid">Hybrid</option>
-                  <option value="Vor Ort (Umkreis Soest)">Vor Ort (Umkreis Soest)</option>
-                </select>
-              </div>
-
-              <div class="cfg-row">
-                <label class="cfg-label" for="cfg-humor">Merkmal: Humor-Level</label>
-                <select id="cfg-humor" class="cfg-select">
-                  <option value="">Bitte wählen</option>
-                  <option value="Kein Smalltalk">Kein Smalltalk</option>
-                  <option value="Professionell">Professionell</option>
-                  <option value="Passt zur Kaffeekueche">Passt zur Kaffeeküche</option>
-                </select>
-              </div>
-
-              <div class="cfg-row">
-                <label class="cfg-label" for="cfg-coffee">Merkmal: Koffein-Bedarf</label>
-                <select id="cfg-coffee" class="cfg-select">
-                  <option value="">Bitte wählen</option>
-                  <option value="1">☕</option>
-                  <option value="2">☕☕</option>
-                  <option value="3">☕☕☕</option>
-                  <option value="4">Nicht vor 10 Uhr</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <aside class="cfg-card cfg-side" aria-live="polite">
-            <div class="cfg-stat">
-              <div class="cfg-stat-label">Match-Score</div>
-              <div id="cfg-score" class="cfg-stat-value">0%</div>
-              <div class="cfg-meter"><span id="cfg-meter"></span></div>
-            </div>
-
-            <div class="cfg-stat">
-              <div class="cfg-stat-label">Indikativer Tagessatz</div>
-              <div id="cfg-rate" class="cfg-stat-value">-</div>
-            </div>
-
-            <div class="cfg-stat">
-              <div class="cfg-stat-label">Aktive Meldungen</div>
-              <ul id="cfg-messages" class="cfg-msg"></ul>
-            </div>
-
-            <div id="cfg-reveal" class="cfg-reveal">
-              <h3>🎯 Patrick Lohmann · Senior Business Consultant · SAP VC/CPQ · Wilo Group</h3>
-              <div class="cfg-actions">
-                <a class="cfg-link" href="https://www.linkedin.com/in/patrick-l-bba54b171/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn öffnen
-                </a>
-              </div>
-            </div>
-
-            <div class="cfg-actions">
-              <button id="cfg-reset" class="cfg-btn" type="button">Reset</button>
-            </div>
-          </aside>
-        </div>
-      </section>
-      <!-- === HIER ENDET DER KONFIGURATOR === -->
-
-      <!-- ===== Skills ===== -->
-      <div class="grid-container grid-skill" id="staerken">
+    <!-- ===== Skills ===== -->
+      <details open>
+        <summary><h1 class="section-title">Stärken & Kompetenzen</h1></summary>
+        <div class="grid-container grid-skill" id="staerken">
         <div class="grid-row-span-2 shiny-grid grid-staerke">
           <h1>Stärken</h1>
           <div class="grid-row-3 skill-row">
@@ -383,6 +395,7 @@
       </div>
         </div>
       </div>
+      </details>
 
       <!-- ===== Footer ===== -->
       <div class="container">
@@ -407,6 +420,15 @@
 
       <a href="#" class="back-to-top" aria-label="Zum Seitenanfang">↑</a>
       <script src="./js/mini-configurator.js"></script>
+      <script>
+        window.addEventListener('scroll', () => {
+          const progress = document.getElementById('scroll-progress');
+          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = (winScroll / height) * 100;
+          progress.style.width = scrolled + '%';
+        });
+      </script>
 
   </body>
 </html>
