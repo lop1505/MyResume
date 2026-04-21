@@ -1225,9 +1225,137 @@ details summary:hover .section-title {
     color: var(--page-fg);
 }
 
+.tree-open-btn {
+    background-color: transparent;
+    color: var(--page-fg);
+}
+
 .cfg-open-btn:hover,
 .cfg-open-btn:focus {
     color: var(--warm-wh);
+}
+
+.tree-open-btn:hover,
+.tree-open-btn:focus {
+    color: var(--warm-wh);
+}
+
+#vc-tree-artifact {
+    --tree-ink: #0e0e0f;
+    --tree-paper: #f5f2ed;
+    --tree-warm: #faf8f4;
+    --tree-mid: #6b6b72;
+    --tree-rule: #d4cfc8;
+    --tree-edge: #8f867a;
+    --tree-node-bg: #ffffff;
+    --tree-node-fg: #2a2a2e;
+    --tree-constraint-bg: #2a2a2e;
+    --tree-constraint-fg: #faf8f4;
+    --tree-accent: #c07b3a;
+    color: var(--tree-ink);
+    background: var(--tree-paper);
+    padding: 1.2rem 1.2rem 2rem;
+}
+
+html[data-theme='dark'] #vc-tree-artifact {
+    --tree-ink: #faf8f4;
+    --tree-paper: #2a2a2e;
+    --tree-warm: #303036;
+    --tree-mid: #c7c2b9;
+    --tree-rule: #4b4c52;
+    --tree-edge: #746e66;
+    --tree-node-bg: #36363d;
+    --tree-node-fg: #faf8f4;
+    --tree-constraint-bg: #efeae1;
+    --tree-constraint-fg: #0e0e0f;
+}
+
+#vc-tree-artifact.tree-collapsed {
+    display: none;
+}
+
+#vc-tree-artifact .tree-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+#vc-tree-artifact .tree-card {
+    background: var(--tree-warm);
+    border: 1px solid var(--tree-rule);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+#vc-tree-artifact .tree-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 300;
+    color: var(--tree-ink);
+}
+
+#vc-tree-artifact .tree-intro,
+#vc-tree-artifact .tree-caption {
+    margin: 0.6rem 0 0;
+    color: var(--tree-mid);
+}
+
+#vc-tree-artifact .vc-tree-svg {
+    width: 100%;
+    height: auto;
+    margin-top: 0.8rem;
+    border: 1px solid var(--tree-rule);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--tree-warm) 90%, var(--tree-paper) 10%);
+}
+
+#vc-tree-artifact .tree-edge {
+    stroke: var(--tree-edge);
+    stroke-width: 2.4;
+    fill: none;
+    transition: stroke 160ms ease, stroke-width 160ms ease, opacity 160ms ease;
+    opacity: 0.52;
+}
+
+#vc-tree-artifact .tree-edge.tree-edge-constraint {
+    stroke-dasharray: 6 6;
+}
+
+#vc-tree-artifact .tree-edge.edge-active {
+    stroke: var(--tree-accent);
+    stroke-width: 4;
+    opacity: 1;
+}
+
+#vc-tree-artifact .tree-node {
+    cursor: pointer;
+}
+
+#vc-tree-artifact .tree-node circle {
+    fill: var(--tree-node-bg);
+    stroke: var(--tree-edge);
+    stroke-width: 2;
+    transition: fill 160ms ease, stroke 160ms ease, stroke-width 160ms ease;
+}
+
+#vc-tree-artifact .tree-node text {
+    fill: var(--tree-node-fg);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+#vc-tree-artifact .tree-node.tree-node-constraint circle {
+    fill: var(--tree-constraint-bg);
+}
+
+#vc-tree-artifact .tree-node.tree-node-constraint text {
+    fill: var(--tree-constraint-fg);
+}
+
+#vc-tree-artifact .tree-node.node-active circle {
+    stroke: var(--tree-accent);
+    stroke-width: 4;
 }
 
 @media (max-width: 900px) {

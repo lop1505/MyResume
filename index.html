@@ -74,6 +74,7 @@
         <div class="hero-actions no-print">
           <button type="button" class="export-pdf-btn" onclick="window.print()">Als PDF exportieren</button>
           <button type="button" id="cfg-open-btn" class="export-pdf-btn cfg-open-btn" aria-controls="cfg-mini-configurator" aria-expanded="false">Mini-Konfigurator öffnen</button>
+          <button type="button" id="tree-open-btn" class="export-pdf-btn tree-open-btn" aria-controls="vc-tree-artifact" aria-expanded="false">Merkmalsbaum öffnen</button>
         </div>
       </div>
       <div class="overflow-hidden" style="max-height: 30vh;">
@@ -203,6 +204,87 @@
       </div>
     </section>
     <!-- === HIER ENDET DER KONFIGURATOR === -->
+
+    <!-- === HIER STARTET DER MERKMALSBAUM === -->
+    <section id="vc-tree-artifact" class="tree-wrap tree-collapsed" aria-labelledby="tree-title" aria-hidden="true">
+      <div class="tree-shell">
+        <div class="tree-card">
+          <h2 id="tree-title" class="tree-title">Merkmalsbaum-Visualisierung (VC Whiteboard Artifakt)</h2>
+          <p class="tree-intro">Klicke auf einen Knoten. Der zugehörige Pfad im Merkmalsbaum leuchtet auf und zeigt, wie Werte und Constraints miteinander verbunden sind.</p>
+
+          <svg id="vc-tree-svg" class="vc-tree-svg" viewBox="0 0 1060 380" role="img" aria-label="Merkmalsbaum mit klickbaren Knoten und Constraint-Pfaden">
+            <g class="tree-edges">
+              <line id="edge-product-feature" class="tree-edge" x1="120" y1="180" x2="330" y2="120" />
+              <line id="edge-product-role" class="tree-edge" x1="120" y1="180" x2="330" y2="255" />
+
+              <line id="edge-feature-remote" class="tree-edge" x1="410" y1="120" x2="610" y2="75" />
+              <line id="edge-feature-onsite" class="tree-edge" x1="410" y1="120" x2="610" y2="135" />
+
+              <line id="edge-role-junior" class="tree-edge" x1="410" y1="255" x2="610" y2="235" />
+              <line id="edge-role-lead" class="tree-edge" x1="410" y1="255" x2="610" y2="295" />
+
+              <line id="edge-constraint-remote" class="tree-edge tree-edge-constraint" x1="670" y1="75" x2="870" y2="110" />
+              <line id="edge-constraint-junior" class="tree-edge tree-edge-constraint" x1="670" y1="235" x2="870" y2="230" />
+              <line id="edge-constraint-lead" class="tree-edge tree-edge-constraint" x1="670" y1="295" x2="870" y2="230" />
+            </g>
+
+            <g class="tree-nodes">
+              <g class="tree-node" data-node="product" data-edges="edge-product-feature edge-product-role">
+                <circle cx="90" cy="180" r="34" />
+                <text x="90" y="176">Produkt-</text>
+                <text x="90" y="193">klasse</text>
+              </g>
+
+              <g class="tree-node" data-node="feature" data-edges="edge-product-feature edge-feature-remote edge-feature-onsite">
+                <circle cx="370" cy="120" r="34" />
+                <text x="370" y="118">Merkmal</text>
+              </g>
+
+              <g class="tree-node" data-node="role" data-edges="edge-product-role edge-role-junior edge-role-lead">
+                <circle cx="370" cy="255" r="34" />
+                <text x="370" y="253">Merkmal</text>
+                <text x="370" y="270">Rolle</text>
+              </g>
+
+              <g class="tree-node" data-node="value-remote" data-edges="edge-feature-remote edge-constraint-remote">
+                <circle cx="640" cy="75" r="30" />
+                <text x="640" y="72">Wert</text>
+                <text x="640" y="89">Remote</text>
+              </g>
+
+              <g class="tree-node" data-node="value-onsite" data-edges="edge-feature-onsite">
+                <circle cx="640" cy="135" r="30" />
+                <text x="640" y="132">Wert</text>
+                <text x="640" y="149">Vor Ort</text>
+              </g>
+
+              <g class="tree-node" data-node="value-junior" data-edges="edge-role-junior edge-constraint-junior">
+                <circle cx="640" cy="235" r="30" />
+                <text x="640" y="232">Wert</text>
+                <text x="640" y="249">Junior</text>
+              </g>
+
+              <g class="tree-node" data-node="value-lead" data-edges="edge-role-lead edge-constraint-lead">
+                <circle cx="640" cy="295" r="30" />
+                <text x="640" y="292">Wert</text>
+                <text x="640" y="309">Projektleiter</text>
+              </g>
+
+              <g class="tree-node tree-node-constraint" data-node="constraint" data-edges="edge-constraint-remote edge-constraint-junior edge-constraint-lead">
+                <circle cx="920" cy="170" r="56" />
+                <text x="920" y="150">Constraint</text>
+                <text x="920" y="171">Remote +</text>
+                <text x="920" y="192">Automotive = ✕</text>
+                <text x="920" y="223">Junior + PL = ✕</text>
+              </g>
+            </g>
+          </svg>
+
+          <p id="tree-caption" class="tree-caption">Aktiver Pfad: keiner. Klicke auf einen Knoten, um Abhängigkeiten zu sehen.</p>
+        </div>
+      </div>
+    </section>
+    <!-- === HIER ENDET DER MERKMALSBAUM === -->
 
     <!-- ===== Experience/Education ===== -->
     <details open>
@@ -440,6 +522,7 @@
 
       <a href="#" class="back-to-top" aria-label="Zum Seitenanfang">↑</a>
       <script src="./js/mini-configurator.js"></script>
+      <script src="./js/vc-tree-artifact.js"></script>
       <script>
         window.addEventListener('scroll', () => {
           const progress = document.getElementById('scroll-progress');
