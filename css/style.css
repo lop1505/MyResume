@@ -640,19 +640,6 @@ img{
     border: 1px solid var(--rule);
 }
 
-.progress{
-    background-color: rgba(192, 123, 58, 0.16) !important;
-    border: 1px solid rgba(192, 123, 58, 0.35);
-    border-radius: 999px;
-    width: 100%;
-    max-width: 200px;
-}
-
-.progress-bar{
-    background-color: var(--copper) !important;
-    background-image: none !important;
-}
-
 .grid-row-3 > div:first-child,
 .grid-row-3-small > div:first-child,
 .grid-row-2 > div:first-child{

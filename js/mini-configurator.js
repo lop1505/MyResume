@@ -1,12 +1,7 @@
 (function () {
   const root = document.getElementById('cfg-mini-configurator');
   if (!root) return;
-  const aboutSection = document.getElementById('aboutme');
   const openBtn = document.getElementById('cfg-open-btn');
-
-  if (aboutSection) {
-    aboutSection.insertAdjacentElement('afterend', root);
-  }
 
   const els = {
     domainChecks: Array.from(root.querySelectorAll('input[name="cfg-domain"]')),
@@ -172,9 +167,6 @@
   function renderMessages(items) {
     els.messages.innerHTML = '';
     if (!items.length) {
-      const li = document.createElement('li');
-      li.textContent = 'Keine Konflikte. Die Regel-Engine ist zufrieden.';
-      els.messages.appendChild(li);
       return;
     }
 
