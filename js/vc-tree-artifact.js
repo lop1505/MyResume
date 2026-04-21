@@ -251,7 +251,7 @@
           path: createSvgElement('path', {
             class: 'tree-link tree-link-struct',
             d: curvePath(
-              { x: merkmal.x + merkmal.width, y: valueNode.y },
+              { x: merkmal.x + merkmal.width, y: merkmal.y },
               { x: valueNode.x, y: valueNode.y },
               52
             )
