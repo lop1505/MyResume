@@ -256,53 +256,56 @@
       <div class="dark-grid prj-img">
         <img class="container-img" src="./images/experience.jpg" alt="experience" width="auto">
       </div>
-      <div class="shiny-grid grid-txt prj-txt prj-txt-top">
+      <div class="dark-grid grid-txt prj-txt prj-txt-bottom">
         <h1>Ausgewählte Projekte</h1>
-        <ul class="cv-items">
-          <li>
+        
+        <!-- Filter Chips -->
+        <div class="prj-filter-wrap">
+          <button class="prj-filter-chip active" data-filter="alle">Alle</button>
+          <button class="prj-filter-chip" data-filter="vc">SAP VC</button>
+          <button class="prj-filter-chip" data-filter="cpq">CPQ</button>
+          <button class="prj-filter-chip" data-filter="agil">Agil</button>
+          <button class="prj-filter-chip" data-filter="po">Product Owner</button>
+          <button class="prj-filter-chip" data-filter="eto">ETO</button>
+        </div>
+
+        <ul class="cv-items" id="prj-list-all">
+          <li data-filter="cpq po">
           <b>CPQ-Einführung SiBoost 2.0 (Wilo Gruppe, international)</b><br>
           04/2025 - 04/2026<br>
           Work-Package-Owner für Interfaces &amp; Data Sources sowie Price and Product Comparison in SAP CPQ
           </li>
-          <li>
+          <li data-filter="vc cpq eto">
           <b>Spaix/VSX-Anbindung an SAP CPQ Quote 2.0</b><br>
           04/2025 - 04/2026<br>
           Konzeption der Integration externer Konfiguratoren (ETO/CTO/CTO+/KMAT/MSO) und Moderation internationaler Workshops (DE/FR)
           </li>
-          <li>
+          <li data-filter="vc">
           <b>Analyse und Weiterentwicklung bestehender Konfigurationslogiken</b><br>
           12/2021 - 03/2025<br>
           Analyse und Weiterentwicklung bestehender VC-Modelle im Hinblick auf Advanced Variant Configuration sowie Upgrade auf neueste EHP-Versionen
           </li>
-          <li>
+          <li data-filter="cpq">
           <b>Anpassung High-Level-Konfiguration für CPQ (Encoway)</b><br>
           01/2021 - 12/2021<br>
           Konzeption und Umsetzung der Konfigurationslogik für den Übergang in eine CPQ-gestützte Angebotswelt
           </li>
-        </ul>
-      </div>
-      <div class="dark-grid grid-txt prj-txt prj-txt-bottom">
-        <ul class="cv-items">
-          <li>
+          <li data-filter="agil po">
           <b>Einführung von Agilität in der Abteilung LO-VC</b><br>
           04/2020 - 12/2020<br>
           Etablierung agiler Arbeitsweisen zur beschleunigten Umsetzung von Konfigurationsanforderungen
           </li>
-          <li>
+          <li data-filter="eto po">
           <b>Optimierung der Preispolitik im ETO-Prozess</b><br>
           04/2020 - 12/2020<br>
           Strukturierung von Preislogiken und Harmonisierung der Regeln für komplexe Variantenangebote
           </li>
-          <li>
+          <li data-filter="po">
           <b>Stammdatenbereinigung als Product Owner</b><br>
           04/2019 - 12/2019<br>
           Qualitätssicherung und Bereinigung von Stücklisten und Arbeitsplänen als Basis für stabile End-to-End-Prozesse
           </li>
         </ul>
-      </div>
-      
-      <div class="dark-grid prj-img">
-        <img class="container-img" src="./images/growth.jpg" alt="flower_growth" width="auto">
       </div>
       </div>
     </details>
@@ -310,6 +313,9 @@
     <!-- ===== Skills ===== -->
       <details open>
         <summary><h1 class="section-title">Stärken & Kompetenzen</h1></summary>
+        <div class="dark-grid skills-banner">
+        <img class="container-img" src="./images/growth.jpg" alt="flower_growth" width="auto">
+      </div>
         <div class="grid-container grid-skill" id="staerken">
         <div class="grid-row-span-2 shiny-grid grid-staerke">
           <h1>Stärken</h1>
@@ -427,6 +433,109 @@
           const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
           const scrolled = (winScroll / height) * 100;
           progress.style.width = scrolled + '%';
+        });
+      </script>
+      <script>
+        // Project Filter Logic
+        document.addEventListener('DOMContentLoaded', () => {
+          const filterChips = document.querySelectorAll('.prj-filter-chip');
+          const projectItems = document.querySelectorAll('#prj-list-all li');
+
+          filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+              const activeFilter = chip.dataset.filter;
+              
+              // Update active state
+              filterChips.forEach(c => c.classList.remove('active'));
+              chip.classList.add('active');
+              
+              // Filter projects
+              projectItems.forEach(item => {
+                if (!item.dataset.filter) return;
+                const itemFilters = item.dataset.filter.split(' ');
+                if (activeFilter === 'alle' || itemFilters.includes(activeFilter)) {
+                  item.classList.remove('hidden');
+                } else {
+                  item.classList.add('hidden');
+                }
+              });
+            });
+          });
+        });
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          const heroTags = document.querySelectorAll('.hero-tag');
+          if (!prefersReducedMotion && heroTags.length) {
+            heroTags.forEach((tag, index) => {
+              tag.classList.add('stagger-init');
+              tag.style.transitionDelay = `${index * 80}ms`;
+            });
+            requestAnimationFrame(() => {
+              heroTags.forEach(tag => tag.classList.add('stagger-in'));
+            });
+          }
+
+          const revealTargets = document.querySelectorAll(
+            '.grid-container > div, .grid-one-col > div, .skills-banner, #cfg-mini-configurator .cfg-card, #cfg-mini-configurator .cfg-side'
+          );
+
+          if (!prefersReducedMotion) {
+            revealTargets.forEach(el => el.classList.add('reveal-in'));
+          }
+
+          if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+            revealTargets.forEach(el => {
+              el.classList.remove('reveal-in');
+              el.classList.add('is-visible');
+            });
+            return;
+          }
+
+          const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            });
+          }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+
+          revealTargets.forEach(el => revealObserver.observe(el));
+
+          const skillLevels = document.querySelectorAll('.skill-level');
+          const getLevel = (el) => {
+            const levelClass = Array.from(el.classList).find(cls => cls.startsWith('level-'));
+            if (!levelClass) return 0;
+            const parsedLevel = Number(levelClass.replace('level-', ''));
+            return Number.isNaN(parsedLevel) ? 0 : Math.min(parsedLevel, 4);
+          };
+
+          const fillObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target;
+              if (el.dataset.filled === 'true') {
+                observer.unobserve(el);
+                return;
+              }
+
+              const targetLevel = getLevel(el);
+              el.classList.add('animate-ready');
+
+              for (let step = 1; step <= targetLevel; step += 1) {
+                window.setTimeout(() => {
+                  el.classList.add(`fill-${step}`);
+                }, step * 150);
+              }
+
+              el.dataset.filled = 'true';
+              observer.unobserve(el);
+            });
+          }, { threshold: 0.3 });
+
+          skillLevels.forEach(el => fillObserver.observe(el));
         });
       </script>
 

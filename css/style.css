@@ -67,6 +67,47 @@ img{
     transform: translateY(-0.2rem);
 }
 
+/* Project Filter Chips */
+.prj-filter-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.prj-filter-chip {
+    padding: 0.45rem 0.85rem;
+    border: 1.5px solid var(--copper);
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--copper);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.prj-filter-chip:hover {
+    background-color: rgba(192, 123, 58, 0.1);
+}
+
+.prj-filter-chip.active {
+    background-color: var(--copper);
+    color: var(--paper);
+}
+
+.prj-filter-chip.active:hover {
+    background-color: var(--copper-dk);
+}
+
+/* Filtered item hiding */
+.cv-items li.hidden {
+    display: none;
+}
+
 #header-img{
     transform: scaleX(-1);
     border: 1px solid var(--copper);
@@ -196,6 +237,17 @@ details summary:hover .section-title {
     text-transform: uppercase;
 }
 
+.hero-tag.stagger-init{
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+.hero-tag.stagger-in{
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 400ms ease, transform 400ms ease;
+}
+
 .hero-copy{
     max-width: 52rem;
 }
@@ -222,6 +274,14 @@ details summary:hover .section-title {
     margin-top: 0.7rem;
 }
 
+.skills-banner{
+    margin-top: 0.7rem;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    height: clamp(120px, 14vw, 170px);
+    overflow: hidden;
+}
+
 .grid-one-col{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -230,6 +290,27 @@ details summary:hover .section-title {
     margin-top: 0.7rem;
     margin-left: 15vw;
     margin-right: 15vw;
+}
+
+#projekte{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0.7rem;
+}
+
+#projekte .prj-img,
+#projekte .prj-txt{
+    grid-column: 1;
+}
+
+#projekte .prj-txt{
+    grid-row: auto;
+}
+
+#projekte .prj-img{
+    width: 100%;
+    height: clamp(120px, 14vw, 170px);
+    overflow: hidden;
 }
 
 .grid-row-3{
@@ -356,6 +437,35 @@ details summary:hover .section-title {
     --seg-4: var(--rule);
 }
 
+.skill-level.animate-ready{
+    --seg-1: var(--rule) !important;
+    --seg-2: var(--rule) !important;
+    --seg-3: var(--rule) !important;
+    --seg-4: var(--rule) !important;
+}
+
+.skill-level.animate-ready.fill-1{
+    --seg-1: var(--copper) !important;
+}
+
+.skill-level.animate-ready.fill-2{
+    --seg-1: var(--copper) !important;
+    --seg-2: var(--copper) !important;
+}
+
+.skill-level.animate-ready.fill-3{
+    --seg-1: var(--copper) !important;
+    --seg-2: var(--copper) !important;
+    --seg-3: var(--copper) !important;
+}
+
+.skill-level.animate-ready.fill-4{
+    --seg-1: var(--copper) !important;
+    --seg-2: var(--copper) !important;
+    --seg-3: var(--copper) !important;
+    --seg-4: var(--copper) !important;
+}
+
 .dark-grid .skill-level{
     color: var(--warm-wh);
 }
@@ -367,6 +477,41 @@ details summary:hover .section-title {
         linear-gradient(var(--seg-3), var(--seg-3)) calc(50% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
         linear-gradient(var(--seg-4), var(--seg-4)) calc(75% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
         linear-gradient(rgba(250, 248, 244, 0.28), rgba(250, 248, 244, 0.28));
+}
+
+.reveal-in{
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.reveal-in.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#prj-list-all > li{
+    border-left: 3px solid transparent;
+    padding-left: 0.75rem;
+    transition: border-color 200ms ease;
+}
+
+#prj-list-all > li:hover{
+    border-left-color: var(--copper);
+}
+
+@media (prefers-reduced-motion: reduce){
+    .reveal-in,
+    .hero-tag.stagger-init,
+    .hero-tag.stagger-in{
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    #prj-list-all > li{
+        transition: none;
+    }
 }
 
 @media (max-width: 1480px){
@@ -388,6 +533,17 @@ details summary:hover .section-title {
         margin-left: 10vw;
         margin-right: 10vw;
     }
+
+    .skills-banner{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+
+    #projekte{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
 }
 
 @media (max-width: 1520px){
@@ -420,6 +576,17 @@ details summary:hover .section-title {
         margin-left: 8vw;
         margin-right: 8vw;
     }
+
+    .skills-banner{
+        margin-left: 8vw;
+        margin-right: 8vw;
+    }
+
+    #projekte{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
 }
 
 @media (max-width: 1184px){
@@ -484,6 +651,17 @@ details summary:hover .section-title {
         margin-left: 6vw;
         margin-right: 6vw;
     }
+
+    .skills-banner{
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #projekte{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
 }
 
 @media (max-width: 952px){
@@ -580,6 +758,16 @@ details summary:hover .section-title {
         margin-top: 0;
         margin-left: 1.5rem;
         margin-right: 1.5rem;
+    }
+
+    .skills-banner{
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        height: clamp(100px, 28vw, 140px);
+    }
+
+    #projekte .prj-img{
+        height: clamp(100px, 28vw, 140px);
     }
 
     .grid-row-3{
