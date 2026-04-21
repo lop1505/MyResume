@@ -230,28 +230,99 @@ img{
 }
 
 .skill-row{
-    display: flex !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 240px;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.6rem;
-    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+.skill-row > div:first-child{
+    font-family: var(--font-body) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    min-width: 0;
 }
 
 .skill-level{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2rem;
-    padding: 0.35rem 0.75rem;
-    border: 1px solid var(--copper);
-    border-radius: 999px;
-    background-color: rgba(192, 123, 58, 0.08);
-    color: var(--copper-dk);
+    --seg-1: transparent;
+    --seg-2: transparent;
+    --seg-3: transparent;
+    --seg-4: transparent;
+    display: grid;
+    grid-template-rows: 8px auto;
+    row-gap: 0.45rem;
+    justify-items: start;
+    align-content: center;
+    inline-size: 240px;
+    margin-left: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--ink);
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    white-space: nowrap;
+    line-height: 1.2;
+    white-space: normal;
+}
+
+.skill-level::before{
+    content: "";
+    display: block;
+    inline-size: 100%;
+    block-size: 8px;
+    border-radius: 2px;
+    background:
+        linear-gradient(var(--seg-1), var(--seg-1)) 0 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(var(--seg-2), var(--seg-2)) calc(25% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(var(--seg-3), var(--seg-3)) calc(50% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(var(--seg-4), var(--seg-4)) calc(75% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(var(--rule), var(--rule));
+}
+
+.skill-level.level-4{
+    --seg-1: var(--copper);
+    --seg-2: var(--copper);
+    --seg-3: var(--copper);
+    --seg-4: var(--copper);
+}
+
+.skill-level.level-3{
+    --seg-1: var(--copper);
+    --seg-2: var(--copper);
+    --seg-3: var(--copper);
+    --seg-4: var(--rule);
+}
+
+.skill-level.level-2{
+    --seg-1: var(--copper);
+    --seg-2: var(--copper);
+    --seg-3: var(--rule);
+    --seg-4: var(--rule);
+}
+
+.skill-level.level-1{
+    --seg-1: var(--copper);
+    --seg-2: var(--rule);
+    --seg-3: var(--rule);
+    --seg-4: var(--rule);
+}
+
+.dark-grid .skill-level{
+    color: var(--warm-wh);
+}
+
+.dark-grid .skill-level::before{
+    background:
+        linear-gradient(var(--seg-1), var(--seg-1)) 0 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(var(--seg-2), var(--seg-2)) calc(25% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(var(--seg-3), var(--seg-3)) calc(50% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(var(--seg-4), var(--seg-4)) calc(75% + 2px) 0 / calc(25% - 6px) 100% no-repeat,
+        linear-gradient(rgba(250, 248, 244, 0.28), rgba(250, 248, 244, 0.28));
 }
 
 @media (max-width: 1480px){
@@ -965,9 +1036,14 @@ img{
         background-color: #404040 !important;
     }
 
+    .skill-row{
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+    }
+
     .skill-level{
+        inline-size: min(100%, 260px);
         font-size: 0.66rem;
-        padding: 0.35rem 0.6rem;
     }
 
     .back-to-top{
