@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Lesen</title>
+  <desc id="desc">Stilisiertes Buch-Icon im CI-Stil</desc>
+  <rect width="64" height="64" rx="14" fill="#faf8f4"/>
+  <path d="M16 18c0-2.2 1.8-4 4-4h12c3.5 0 6.7 1.4 9 3.7 2.3-2.3 5.5-3.7 9-3.7h-1c2.2 0 4 1.8 4 4v28c0 2.2-1.8 4-4 4H48c-2.7 0-5.3 1-7 2.8-1.7-1.8-4.3-2.8-7-2.8H20c-2.2 0-4-1.8-4-4V18z" fill="#2a2a2e"/>
+  <path d="M32 18v34" stroke="#c07b3a" stroke-width="2"/>
+  <path d="M22 24h7M22 29h7M22 34h7M35 24h7M35 29h7M35 34h7" stroke="#faf8f4" stroke-width="2" stroke-linecap="round"/>
+</svg>

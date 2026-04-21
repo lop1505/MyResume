@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resume</title>
+    <title>Lebenslauf | Patrick Lohmann</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +23,10 @@
         </div>
   
         <ul class="nav col-12 col-md-auto  justify-content-center">
-          <li><a href="#aboutme" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">About me</a></li>
-          <li><a href="#education" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Experience/Education</a></li>
-          <li><a href="#projekte" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Projects</a></li>
-          <li><a href="#staerken" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Skills</a></li>
+          <li><a href="#aboutme" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Profil</a></li>
+          <li><a href="#education" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Erfahrung & Ausbildung</a></li>
+          <li><a href="#projekte" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Projekte</a></li>
+          <li><a href="#staerken" class="nav-link px-2 px-md-3 px-lg-4 px-xl-5 text-white">Stärken</a></li>
         </ul>
   
         <div class="col-md-1">
@@ -37,14 +37,27 @@
 
     <!-- ===== Landing-Site ===== -->
     <div class="px-4 pt-5 my-5 text-center" id="aboutme">
+      <p class="hero-kicker mb-2">Senior Business Consultant · SAP VC / CPQ · Wilo Group</p>
       <h1 class="header-font-bold mb-0">Patrick Lohmann</h1>
-      <h2 class="sub-header-font-bold">Lebenslauf, Soest Deutschland</h2>
+      <h2 class="sub-header-font-bold">Soest, Deutschland</h2>
       <div class="p-5">
         <img src="./images/profile_pic_circle.png" class="rounded-circle" alt="profile picture" width="270" height="270" loading="lazy">
       </div>
-      <h1 class="header-font">Interessiert, sorgfältig, genau, eigeninitiativ</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="sub-header-font mb-4">Auf dem Gebiet der IT und Unternehmensprozesse fühle ich mich heimisch. Außerdem reizt es mich mir fortlaufend neue Kompetenzen anzueignen und Neues zu lernen, um Strukturen sowie Abläufe zu verbessern.</p>
+      <h1 class="header-font">Ich verbinde SAP-Konfiguration, CPQ und Prozessverständnis zu tragfähigen Lösungen.</h1>
+      <div class="hero-tags" aria-label="Schwerpunkte">
+        <span class="hero-tag">SAP VC</span>
+        <span class="hero-tag">SAP CPQ</span>
+        <span class="hero-tag">ETO</span>
+        <span class="hero-tag">Prozessoptimierung</span>
+        <span class="hero-tag">Product Ownership</span>
+      </div>
+      <div class="col-lg-7 mx-auto hero-copy">
+        <p class="sub-header-font mb-3">Ich arbeite an der Schnittstelle von IT, Konfiguration und Unternehmensprozessen. Mein Schwerpunkt liegt darauf, komplexe Produkt- und Prozesslogiken in belastbare, verständliche und wirtschaftlich sinnvolle SAP- und CPQ-Lösungen zu übersetzen.</p>
+        <p class="sub-header-font mb-4">Dabei verbinde ich technisches Detailverständnis mit strukturierter Umsetzung, analytischem Denken und einem klaren Blick für praktikable Ergebnisse im Fachbereich.</p>
+        <div class="hero-actions no-print">
+          <button type="button" class="export-pdf-btn" onclick="window.print()">Als PDF exportieren</button>
+          <button type="button" id="cfg-open-btn" class="export-pdf-btn cfg-open-btn" aria-controls="cfg-mini-configurator" aria-expanded="false">Mini-Konfigurator öffnen</button>
+        </div>
       </div>
       <div class="overflow-hidden" style="max-height: 30vh;">
 
@@ -58,7 +71,7 @@
       </div>
 
       <div class="shiny-grid grid-txt grid2" id="education">
-        <h1>Education</h1>
+        <h1>Ausbildung</h1>
         <!-- <a href="#">Learn more</a> -->
         <ul class="cv-items">
           <li>
@@ -82,25 +95,26 @@
       </div>
 
       <div class="dark-grid grid-txt grid3">
-        <h1>Experience</h1>
+        <h1>Berufserfahrung</h1>
         <!-- <a href="#">Learn more</a> -->
         <ul class="cv-items">
           <li>
-          <b>Senior Business Consultant - SAP VC/CPQ</b><br>
-          12/2021 - heute
-        </li>
-        <li> 
-        Abteilungsleitung – SAP VC & PDM <br>
-        06/2017 - 12/2021
-        </li>
+          <b>Senior Business Consultant SAP VC/CPQ</b><br>
+          Wilo Group · Vollzeit<br>
+          12/2021 - heute · Dortmund, Nordrhein-Westfalen<br>
+          12/2021 - 03/2025: SAP VC/CPQ-Beratung im Tagesgeschäft, Analyse und Weiterentwicklung bestehender Konfigurationslogiken<br>
+          04/2025 - 04/2026: Projektfokus auf internationale CPQ-Einführung
+          </li>
           <li>
-          Teamleitung SAP VC <br>
-          08/2016 - 06/2017 
-        </li>
-        <li>
-          SAP VC und Projektmitglied SAP-ReDesign<br>
-          01/2014 - 08/2016 
-        </li>
+          <b>Leitung SAP LO-VC / ETO</b><br>
+          Teckentrup GmbH &amp; Co. KG · Vollzeit<br>
+          06/2017 - 12/2021 · Verl, Nordrhein-Westfalen
+          </li>
+          <li>
+          <b>Leitung SAP LO-VC / PDM</b><br>
+          Teckentrup GmbH &amp; Co. KG<br>
+          08/2010 - 06/2017 · Verl, Nordrhein-Westfalen
+          </li>
         </ul>
       </div>
       <div class="shiny-grid grid4">
@@ -113,48 +127,42 @@
         <img class="container-img" src="./images/experience.jpg" alt="experience" width="auto">
       </div>
       <div class="shiny-grid grid-txt prj-txt prj-txt-top">
-        <h1>Projekte</h1>
+        <h1>Ausgewählte Projekte</h1>
         <ul class="cv-items">
           <li>
-          Einführung von Agilität in der Abteilung LO-VC<br>
-          04/2020 - vors. 12/2020
+          <b>CPQ-Einführung SiBoost 2.0 (Wilo Gruppe, international)</b><br>
+          04/2025 - 04/2026<br>
+          Work-Package-Owner für Interfaces &amp; Data Sources sowie Price and Product Comparison in SAP CPQ
           </li>
           <li>
-          Optimierung der Preispolitik in Hinblick auf den ETO-Prozesses<br>
-          04/2020 - vors. 12/2020 
+          <b>Spaix/VSX-Anbindung an SAP CPQ Quote 2.0</b><br>
+          04/2025 - 04/2026<br>
+          Konzeption der Integration externer Konfiguratoren (ETO/CTO/CTO+/KMAT/MSO) und Moderation internationaler Workshops (DE/FR)
           </li>
           <li>
-          Einführung eines merkmalsbasierten Analysetools auf Basis von Elasticsearch/Kibana<br>
-          01/2020 - 06/2020
-          </li>
-          <li>
-          Anpassungen der High-Level Konfiguration in Hinblick auf ein CPQ der Fa. Encoway<br>
-          01/2021 - 12/2021
+          <b>Anpassung High-Level-Konfiguration für CPQ (Encoway)</b><br>
+          01/2021 - 12/2021<br>
+          Konzeption und Umsetzung der Konfigurationslogik für den Übergang in eine CPQ-gestützte Angebotswelt
           </li>
         </ul>
       </div>
       <div class="dark-grid grid-txt prj-txt prj-txt-bottom">
         <ul class="cv-items">
           <li>
-        Stammdatenbereinigung (Stücklisten und Arbeitspläne) als Product Owner<br>
-        04/2019 - 12/2019 
-        </li>
-        <li>
-        Entwicklung eines Produktentwicklungsprozesses als Projektmitglied<br>
-        03/2018 - 11/2018
-        </li>
-        <li>
-        Prozess- und Organisationsoptimierung der Sonderauftragsabwicklung als Projektleiter<br>
-        01/2018 - 06/2018 
-        </li>
-        <li>
-        SAP ReDesign als Projektmitglied<br>
-        01/2014 - 01/2016
-        </li>
-        <li>
-        Geschäftsprozessmodellierung zur Effizienzsteigerung der Ersatzteildistribution als Projektmitglied (Siehe Bachelorthesis)<br>
-        06/2013 - 01/2014
-        </li>
+          <b>Einführung von Agilität in der Abteilung LO-VC</b><br>
+          04/2020 - 12/2020<br>
+          Etablierung agiler Arbeitsweisen zur beschleunigten Umsetzung von Konfigurationsanforderungen
+          </li>
+          <li>
+          <b>Optimierung der Preispolitik im ETO-Prozess</b><br>
+          04/2020 - 12/2020<br>
+          Strukturierung von Preislogiken und Harmonisierung der Regeln für komplexe Variantenangebote
+          </li>
+          <li>
+          <b>Stammdatenbereinigung als Product Owner</b><br>
+          04/2019 - 12/2019<br>
+          Qualitätssicherung und Bereinigung von Stücklisten und Arbeitsplänen als Basis für stabile End-to-End-Prozesse
+          </li>
         </ul>
       </div>
       
@@ -163,93 +171,194 @@
       </div>
       </div>
 
+      <!-- === HIER STARTET DER KONFIGURATOR === -->
+      <section id="cfg-mini-configurator" class="cfg-wrap cfg-collapsed" aria-labelledby="cfg-title" aria-hidden="true">
+        <div class="cfg-shell">
+          <div class="cfg-card">
+            <h2 id="cfg-title" class="cfg-title">VC/CPQ Mini-Konfigurator</h2>
+            <p class="cfg-intro">
+              Ein kleiner Meta-Spaß auf dieser Seite, aber mit echter Regel-Engine im Hintergrund.
+              Constraints sperren inkompatible Optionen live, Preisfindung aktualisiert sich bei jeder
+              Änderung. Genau so arbeitet SAP VC. Nur kleiner. Und ehrlicher.
+            </p>
+
+            <div class="cfg-grid">
+              <div class="cfg-row">
+                <span class="cfg-label">Merkmal: Einsatzgebiet (Mehrfachauswahl)</span>
+                <div class="cfg-chip-wrap" id="cfg-domain-wrap">
+                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP VC" />SAP VC</label>
+                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP CPQ" />SAP CPQ</label>
+                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="Vibe Coding" />Vibe Coding</label>
+                  <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="Office 365" />Office 365</label>
+                </div>
+              </div>
+
+              <div class="cfg-row">
+                <label class="cfg-label" for="cfg-level">Merkmal: Erfahrungslevel</label>
+                <select id="cfg-level" class="cfg-select">
+                  <option value="">Bitte wählen</option>
+                  <option value="Junior">Junior</option>
+                  <option value="Senior">Senior</option>
+                  <option value="Lead">Lead</option>
+                  <option value="Veteran">Der, der 2014 dabei war</option>
+                </select>
+              </div>
+
+              <div class="cfg-row">
+                <label class="cfg-label" for="cfg-industry">Merkmal: Branche</label>
+                <select id="cfg-industry" class="cfg-select">
+                  <option value="">Bitte wählen</option>
+                  <option value="Maschinenbau">Maschinenbau</option>
+                  <option value="Pumpenbau">Pumpenbau</option>
+                  <option value="TuerenTore">Türen & Tore</option>
+                  <option value="Automotive">Automotive</option>
+                  <option value="AnythingETO">Anything ETO</option>
+                </select>
+              </div>
+
+              <div class="cfg-row">
+                <label class="cfg-label" for="cfg-role">Merkmal: Rolle</label>
+                <select id="cfg-role" class="cfg-select">
+                  <option value="">Bitte wählen</option>
+                  <option value="Business Consultant">Business Consultant</option>
+                  <option value="Technical Consultant">Technical Consultant</option>
+                  <option value="Product Owner">Product Owner</option>
+                  <option value="Projektleiter">Projektleiter</option>
+                </select>
+              </div>
+
+              <div class="cfg-row">
+                <label class="cfg-label" for="cfg-location">Merkmal: Standort</label>
+                <select id="cfg-location" class="cfg-select">
+                  <option value="">Bitte wählen</option>
+                  <option value="Remote">Remote</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="Vor Ort (Umkreis Soest)">Vor Ort (Umkreis Soest)</option>
+                </select>
+              </div>
+
+              <div class="cfg-row">
+                <label class="cfg-label" for="cfg-humor">Merkmal: Humor-Level</label>
+                <select id="cfg-humor" class="cfg-select">
+                  <option value="">Bitte wählen</option>
+                  <option value="Kein Smalltalk">Kein Smalltalk</option>
+                  <option value="Professionell">Professionell</option>
+                  <option value="Passt zur Kaffeekueche">Passt zur Kaffeeküche</option>
+                </select>
+              </div>
+
+              <div class="cfg-row">
+                <label class="cfg-label" for="cfg-coffee">Merkmal: Koffein-Bedarf</label>
+                <select id="cfg-coffee" class="cfg-select">
+                  <option value="">Bitte wählen</option>
+                  <option value="1">☕</option>
+                  <option value="2">☕☕</option>
+                  <option value="3">☕☕☕</option>
+                  <option value="4">Nicht vor 10 Uhr</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <aside class="cfg-card cfg-side" aria-live="polite">
+            <div class="cfg-stat">
+              <div class="cfg-stat-label">Match-Score</div>
+              <div id="cfg-score" class="cfg-stat-value">0%</div>
+              <div class="cfg-meter"><span id="cfg-meter"></span></div>
+            </div>
+
+            <div class="cfg-stat">
+              <div class="cfg-stat-label">Indikativer Tagessatz</div>
+              <div id="cfg-rate" class="cfg-stat-value">-</div>
+            </div>
+
+            <div class="cfg-stat">
+              <div class="cfg-stat-label">Aktive Meldungen</div>
+              <ul id="cfg-messages" class="cfg-msg"></ul>
+            </div>
+
+            <div id="cfg-reveal" class="cfg-reveal">
+              <h3>🎯 Patrick Lohmann · Senior Business Consultant · SAP VC/CPQ · Wilo Group</h3>
+              <div class="cfg-actions">
+                <a class="cfg-link" href="https://www.linkedin.com/in/patrick-l-bba54b171/" target="_blank" rel="noopener noreferrer">
+                  LinkedIn öffnen
+                </a>
+              </div>
+            </div>
+
+            <div class="cfg-actions">
+              <button id="cfg-reset" class="cfg-btn" type="button">Reset</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <!-- === HIER ENDET DER KONFIGURATOR === -->
+
       <!-- ===== Skills ===== -->
       <div class="grid-container grid-skill" id="staerken">
         <div class="grid-row-span-2 shiny-grid grid-staerke">
           <h1>Stärken</h1>
-          <div class="grid-row-3">
+          <div class="grid-row-3 skill-row">
           <div>Führungskompetenz</div>
-          <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar progress-bar-striped bg-info" style="width: 95%"></div>
-          </div>
+          <span class="skill-level">Sehr ausgeprägt</span>
         </div>
-        <div class="grid-row-3">
+        <div class="grid-row-3 skill-row">
         <div>Scrum als Product Owner</div>
-        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped bg-info" style="width: 85%"></div>
-        </div>
+        <span class="skill-level">Praxisstark</span>
       </div>
-      <div class="grid-row-3">
+      <div class="grid-row-3 skill-row">
       <div>Jira/Confluence</div>
-      <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
-      </div>
+      <span class="skill-level">Sicher in der Praxis</span>
     </div>
-    <div class="grid-row-3">
+    <div class="grid-row-3 skill-row">
       <div>Komplexitätsmanagement</div>
-      <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
-      </div>
+      <span class="skill-level">Sehr ausgeprägt</span>
     </div>
   </div>
         <div class="grid-row-span-2 dark-grid grid-it-staerke">
           <h1>IT-Stärken</h1>
 
-          <div class="grid-row-3-small">
+          <div class="grid-row-3-small skill-row">
             <div>SAP VC/ETO</div>
-            <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-bar progress-bar-striped bg-info" style="width: 95%"></div>
-            </div>
+            <span class="skill-level">Kernkompetenz</span>
           </div>
-          <div class="grid-row-3-small">
+          <div class="grid-row-3-small skill-row">
           <div>SAP CPQ</div>
-          <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar progress-bar-striped bg-info" style="width: 85%"></div>
-          </div>
+          <span class="skill-level">Kernkompetenz</span>
         </div>
-        <div class="grid-row-3-small">
+        <div class="grid-row-3-small skill-row">
         <div>SAP MM/PP</div>
-        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
-        </div>
+        <span class="skill-level">Sehr gute Praxis</span>
       </div>
-      <div class="grid-row-3-small">
+      <div class="grid-row-3-small skill-row">
         <div>Office 365</div>
-        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped bg-info" style="width: 80%"></div>
-        </div>
+        <span class="skill-level">Sehr gute Praxis</span>
       </div>
-      <div class="grid-row-3-small">
+      <div class="grid-row-3-small skill-row">
         <div>Python</div>
-        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped bg-info" style="width: 70%"></div>
-        </div>
+        <span class="skill-level">Gute Praxis</span>
       </div>
-      <div class="grid-row-3-small">
+      <div class="grid-row-3-small skill-row">
         <div>HTML/CSS</div>
-        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
-        </div>
+        <span class="skill-level">Gute Praxis</span>
       </div>
-      <div class="grid-row-3-small">
+      <div class="grid-row-3-small skill-row">
         <div>Javascript</div>
-        <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped bg-info" style="width: 75%"></div>
-        </div>
+        <span class="skill-level">Gute Praxis</span>
       </div>
         </div>
         <div class="dark-grid grid-sprache">
           <h1>Sprachen</h1>
           <div class="grid-row-3-small">
-            <div>Deutsch</div>
-            <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-bar progress-bar-striped bg-info" style="width: 95%"></div>
+            <div>Deutsch · Muttersprachler (C2)</div>
+            <div class="progress" role="progressbar" aria-label="Deutsch, Muttersprachler, C2-Niveau, 100 Prozent" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped bg-info" style="width: 100%"></div>
             </div>
           </div>
           <div class="grid-row-3-small">
-          <div>Englisch</div>
-          <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar progress-bar-striped bg-info" style="width: 80%"></div>
+          <div>Englisch · Business-fließend (C1)</div>
+          <div class="progress" role="progressbar" aria-label="Englisch, Business-fließend, C1-Niveau, 85 Prozent" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped bg-info" style="width: 85%"></div>
           </div>
         </div>
         </div>
@@ -258,19 +367,19 @@
           <div class="grid-2x2">
           <div class="grid-row-2">
             <div>Fußball</div>
-            <img src="./images/football.png" alt="football" height="40px" width="auto">
+            <img src="./images/football-ci.svg" alt="Fußball" height="40px" width="auto">
           </div>
           <div class="grid-row-2">
           <div>Lesen</div>
-          <img src="./images/book.png" alt="book" height="40px" width="auto">
+          <img src="./images/book-ci.svg" alt="Lesen" height="40px" width="auto">
         </div>
         <div class="grid-row-2">
           <div>3D-Druck</div>
-          <img src="./images/printer.png" alt="printer" height="40px" width="auto">
+          <img src="./images/printer-ci.svg" alt="3D-Druck" height="40px" width="auto">
         </div>
         <div class="grid-row-2">
-          <div>Tischlern</div>
-          <img src="./images/wooden-board.png" alt="wooden board" height="40px" width="auto">
+          <div>Padel Tennis</div>
+          <img src="./images/padel-tennis.svg" alt="Padel-Tennis" height="40px" width="auto">
         </div>
       </div>
         </div>
@@ -283,7 +392,7 @@
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
               <img src="images/profile_pic.png" id="header-img" alt="profile picture" width="40" height="40" class="rounded-circle">
             </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Patrick Lohmann</span>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2026 Patrick Lohmann</span>
           </div>
       
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
@@ -296,6 +405,9 @@
           </ul>
         </footer>
       </div>
+
+      <a href="#aboutme" class="back-to-top" aria-label="Zum Seitenanfang">↑</a>
+      <script src="./js/mini-configurator.js"></script>
 
   </body>
 </html>

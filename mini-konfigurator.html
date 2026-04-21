@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini-Konfigurator | Patrick Lohmann</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="margin:0; background:#f5f2ed;">
+    <!-- === HIER STARTET DER KONFIGURATOR === -->
+    <section id="cfg-mini-configurator" class="cfg-wrap" aria-labelledby="cfg-title">
+      <style>
+        #cfg-mini-configurator {
+          --cfg-ink: #0e0e0f;
+          --cfg-paper: #f5f2ed;
+          --cfg-warm: #faf8f4;
+          --cfg-slate: #2a2a2e;
+          --cfg-copper: #c07b3a;
+          --cfg-copper-lt: #d9954f;
+          --cfg-mid: #6b6b72;
+          --cfg-rule: #d4cfc8;
+          color: var(--cfg-ink);
+          background: var(--cfg-paper);
+          font-family: "Instrument Sans", sans-serif;
+          padding: 2rem 1.2rem;
+        }
+
+        #cfg-mini-configurator .cfg-shell {
+          max-width: 1180px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1.3fr 0.95fr;
+          gap: 1rem;
+        }
+
+        #cfg-mini-configurator .cfg-card {
+          background: var(--cfg-warm);
+          border: 1px solid var(--cfg-rule);
+          border-radius: 12px;
+          padding: 1rem;
+        }
+
+        #cfg-mini-configurator .cfg-title {
+          margin: 0 0 0.55rem;
+          font-family: "Fraunces", serif;
+          font-weight: 300;
+          color: var(--cfg-ink);
+          font-size: clamp(1.45rem, 1.8vw, 2rem);
+        }
+
+        #cfg-mini-configurator .cfg-intro {
+          margin: 0 0 1rem;
+          color: var(--cfg-mid);
+          line-height: 1.58;
+          max-width: 68ch;
+        }
+
+        #cfg-mini-configurator .cfg-grid {
+          display: grid;
+          gap: 0.85rem;
+        }
+
+        #cfg-mini-configurator .cfg-row {
+          border: 1px solid var(--cfg-rule);
+          border-radius: 10px;
+          padding: 0.75rem;
+          background: #fff;
+        }
+
+        #cfg-mini-configurator .cfg-label {
+          display: block;
+          margin-bottom: 0.45rem;
+          color: var(--cfg-mid);
+          font-family: "DM Mono", monospace;
+          font-size: 0.75rem;
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+        }
+
+        #cfg-mini-configurator .cfg-chip-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.45rem;
+        }
+
+        #cfg-mini-configurator .cfg-chip {
+          display: inline-flex;
+          align-items: center;
+          border: 1px solid var(--cfg-rule);
+          border-radius: 999px;
+          padding: 0.42rem 0.7rem;
+          background: var(--cfg-warm);
+          color: var(--cfg-ink);
+          cursor: pointer;
+          user-select: none;
+          font-family: "DM Mono", monospace;
+          font-size: 0.74rem;
+          letter-spacing: 0.03em;
+          transition: all 0.18s ease;
+        }
+
+        #cfg-mini-configurator .cfg-chip input {
+          position: absolute;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        #cfg-mini-configurator .cfg-chip:has(input:checked) {
+          background: var(--cfg-slate);
+          color: var(--cfg-warm);
+          border-color: var(--cfg-copper);
+        }
+
+        #cfg-mini-configurator .cfg-chip:has(input:disabled),
+        #cfg-mini-configurator .cfg-chip.cfg-disabled {
+          opacity: 0.44;
+          text-decoration: line-through;
+          cursor: not-allowed;
+        }
+
+        #cfg-mini-configurator .cfg-select {
+          width: 100%;
+          border: 1px solid var(--cfg-rule);
+          border-radius: 8px;
+          background: var(--cfg-warm);
+          color: var(--cfg-ink);
+          padding: 0.55rem 0.6rem;
+          font-family: "Instrument Sans", sans-serif;
+          font-size: 0.95rem;
+        }
+
+        #cfg-mini-configurator .cfg-side {
+          background: linear-gradient(160deg, #26262a 0%, #2f2f34 100%);
+          border: 1px solid #3a3a3f;
+          color: var(--cfg-warm);
+        }
+
+        #cfg-mini-configurator .cfg-stat {
+          border: 1px solid rgba(212, 207, 200, 0.32);
+          border-radius: 10px;
+          padding: 0.75rem;
+          margin-bottom: 0.65rem;
+          background: rgba(250, 248, 244, 0.02);
+        }
+
+        #cfg-mini-configurator .cfg-stat-label {
+          font-family: "DM Mono", monospace;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-size: 0.7rem;
+          color: #d5d1cb;
+          margin-bottom: 0.25rem;
+        }
+
+        #cfg-mini-configurator .cfg-stat-value {
+          font-family: "Fraunces", serif;
+          font-size: 1.45rem;
+          font-weight: 300;
+          color: var(--cfg-warm);
+          line-height: 1.15;
+        }
+
+        #cfg-mini-configurator .cfg-meter {
+          margin-top: 0.45rem;
+          height: 8px;
+          border-radius: 999px;
+          background: rgba(192, 123, 58, 0.2);
+          overflow: hidden;
+        }
+
+        #cfg-mini-configurator .cfg-meter > span {
+          display: block;
+          height: 100%;
+          width: 0%;
+          background: var(--cfg-copper);
+          transition: width 0.22s ease;
+        }
+
+        #cfg-mini-configurator .cfg-msg {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid;
+          gap: 0.4rem;
+        }
+
+        #cfg-mini-configurator .cfg-msg li {
+          border: 1px solid rgba(212, 207, 200, 0.3);
+          border-radius: 8px;
+          padding: 0.5rem 0.6rem;
+          font-size: 0.9rem;
+          line-height: 1.4;
+        }
+
+        #cfg-mini-configurator .cfg-msg .cfg-warn {
+          border-color: rgba(217, 149, 79, 0.65);
+          color: #f0c79a;
+        }
+
+        #cfg-mini-configurator .cfg-msg .cfg-lock {
+          border-color: rgba(212, 207, 200, 0.5);
+          color: #e4e0d8;
+        }
+
+        #cfg-mini-configurator .cfg-reveal {
+          margin-top: 0.8rem;
+          border: 1px solid var(--cfg-copper);
+          border-radius: 10px;
+          padding: 0.8rem;
+          background: rgba(192, 123, 58, 0.08);
+          display: none;
+        }
+
+        #cfg-mini-configurator .cfg-reveal h3 {
+          margin: 0 0 0.45rem;
+          font-family: "Fraunces", serif;
+          font-weight: 300;
+          font-size: 1.15rem;
+          color: var(--cfg-warm);
+        }
+
+        #cfg-mini-configurator .cfg-btn,
+        #cfg-mini-configurator .cfg-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 999px;
+          border: 1px solid var(--cfg-copper);
+          padding: 0.48rem 0.82rem;
+          font-family: "DM Mono", monospace;
+          font-size: 0.72rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          text-decoration: none;
+          transition: all 0.2s ease;
+        }
+
+        #cfg-mini-configurator .cfg-btn {
+          background: transparent;
+          color: var(--cfg-warm);
+          cursor: pointer;
+        }
+
+        #cfg-mini-configurator .cfg-btn:hover,
+        #cfg-mini-configurator .cfg-link:hover {
+          background: var(--cfg-copper);
+          border-color: var(--cfg-copper-lt);
+          color: var(--cfg-warm);
+        }
+
+        #cfg-mini-configurator .cfg-link {
+          background: var(--cfg-slate);
+          color: var(--cfg-warm);
+        }
+
+        #cfg-mini-configurator .cfg-actions {
+          margin-top: 0.8rem;
+          display: flex;
+          gap: 0.5rem;
+          flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+          #cfg-mini-configurator .cfg-shell {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
+      <div class="cfg-shell">
+        <div class="cfg-card">
+          <h2 id="cfg-title" class="cfg-title">VC/CPQ Mini-Konfigurator</h2>
+          <p class="cfg-intro">
+            Ein kleiner Meta-Spaß auf dieser Seite, aber mit echter Regel-Engine im Hintergrund.
+            Constraints sperren inkompatible Optionen live, Preisfindung aktualisiert sich bei jeder
+            Änderung. Genau so arbeitet SAP VC. Nur kleiner. Und ehrlicher.
+          </p>
+
+          <div class="cfg-grid">
+            <div class="cfg-row">
+              <span class="cfg-label">Merkmal: Einsatzgebiet (Mehrfachauswahl)</span>
+              <div class="cfg-chip-wrap" id="cfg-domain-wrap">
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP VC" />SAP VC</label>
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="SAP CPQ" />SAP CPQ</label>
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="Encoway" />Encoway</label>
+                <label class="cfg-chip"><input type="checkbox" name="cfg-domain" value="Spaix/VSX" />Spaix/VSX</label>
+              </div>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-level">Merkmal: Erfahrungslevel</label>
+              <select id="cfg-level" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+                <option value="Lead">Lead</option>
+                <option value="Veteran">Der, der 2014 dabei war</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-industry">Merkmal: Branche</label>
+              <select id="cfg-industry" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Maschinenbau">Maschinenbau</option>
+                <option value="Pumpenbau">Pumpenbau</option>
+                <option value="TuerenTore">Türen & Tore</option>
+                <option value="Automotive">Automotive</option>
+                <option value="AnythingETO">Anything ETO</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-role">Merkmal: Rolle</label>
+              <select id="cfg-role" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Business Consultant">Business Consultant</option>
+                <option value="Technical Consultant">Technical Consultant</option>
+                <option value="Product Owner">Product Owner</option>
+                <option value="Projektleiter">Projektleiter</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-location">Merkmal: Standort</label>
+              <select id="cfg-location" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Remote">Remote</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Vor Ort (Umkreis Soest)">Vor Ort (Umkreis Soest)</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-humor">Merkmal: Humor-Level</label>
+              <select id="cfg-humor" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="Kein Smalltalk">Kein Smalltalk</option>
+                <option value="Professionell">Professionell</option>
+                <option value="Passt zur Kaffeekueche">Passt zur Kaffeeküche</option>
+              </select>
+            </div>
+
+            <div class="cfg-row">
+              <label class="cfg-label" for="cfg-coffee">Merkmal: Koffein-Bedarf</label>
+              <select id="cfg-coffee" class="cfg-select">
+                <option value="">Bitte wählen</option>
+                <option value="1">☕</option>
+                <option value="2">☕☕</option>
+                <option value="3">☕☕☕</option>
+                <option value="4">Nicht vor 10 Uhr</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cfg-card cfg-side" aria-live="polite">
+          <div class="cfg-stat">
+            <div class="cfg-stat-label">Match-Score</div>
+            <div id="cfg-score" class="cfg-stat-value">0%</div>
+            <div class="cfg-meter"><span id="cfg-meter"></span></div>
+          </div>
+
+          <div class="cfg-stat">
+            <div class="cfg-stat-label">Indikativer Tagessatz</div>
+            <div id="cfg-rate" class="cfg-stat-value">-</div>
+          </div>
+
+          <div class="cfg-stat">
+            <div class="cfg-stat-label">Aktive Meldungen</div>
+            <ul id="cfg-messages" class="cfg-msg"></ul>
+          </div>
+
+          <div id="cfg-reveal" class="cfg-reveal">
+            <h3>🎯 Patrick Lohmann · Senior Business Consultant · SAP VC/CPQ · Wilo Group</h3>
+            <div class="cfg-actions">
+              <a class="cfg-link" href="https://www.linkedin.com/in/patrick-l-bba54b171/" target="_blank" rel="noopener noreferrer">
+                LinkedIn öffnen
+              </a>
+            </div>
+          </div>
+
+          <div class="cfg-actions">
+            <button id="cfg-reset" class="cfg-btn" type="button">Reset</button>
+          </div>
+        </aside>
+      </div>
+
+      <script>
+        (function () {
+          const els = {
+            domainChecks: Array.from(document.querySelectorAll('#cfg-mini-configurator input[name="cfg-domain"]')),
+            level: document.getElementById('cfg-level'),
+            industry: document.getElementById('cfg-industry'),
+            role: document.getElementById('cfg-role'),
+            location: document.getElementById('cfg-location'),
+            humor: document.getElementById('cfg-humor'),
+            coffee: document.getElementById('cfg-coffee'),
+            score: document.getElementById('cfg-score'),
+            meter: document.getElementById('cfg-meter'),
+            rate: document.getElementById('cfg-rate'),
+            messages: document.getElementById('cfg-messages'),
+            reveal: document.getElementById('cfg-reveal'),
+            reset: document.getElementById('cfg-reset')
+          };
+
+          const baseRateByLevel = {
+            '': 950,
+            Junior: 950,
+            Senior: 1250,
+            Lead: 1450,
+            Veteran: 1600
+          };
+
+          const roleDelta = {
+            '': 0,
+            'Business Consultant': 80,
+            'Technical Consultant': 70,
+            'Product Owner': 120,
+            Projektleiter: 140
+          };
+
+          function getDomains() {
+            return els.domainChecks.filter((c) => c.checked).map((c) => c.value);
+          }
+
+          function formatRate(value) {
+            return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+          }
+
+          function enforceConstraints() {
+            const level = els.level.value;
+            const industry = els.industry.value;
+            const location = els.location.value;
+            const role = els.role.value;
+
+            const messages = [];
+
+            const automotiveOption = els.industry.querySelector('option[value="Automotive"]');
+            const remoteOption = els.location.querySelector('option[value="Remote"]');
+            const projectLeadOption = els.role.querySelector('option[value="Projektleiter"]');
+            const doorsOption = els.industry.querySelector('option[value="TuerenTore"]');
+
+            if (automotiveOption) automotiveOption.disabled = false;
+            if (remoteOption) remoteOption.disabled = false;
+            if (projectLeadOption) projectLeadOption.disabled = false;
+            if (doorsOption) doorsOption.disabled = false;
+
+            if (location === 'Remote') {
+              if (automotiveOption) automotiveOption.disabled = true;
+              if (industry === 'Automotive') {
+                els.industry.value = '';
+              }
+              messages.push({ type: 'lock', text: 'Remote + Automotive ist gesperrt: die meisten OEMs lassen das nicht zu.' });
+            }
+
+            if (industry === 'Automotive') {
+              if (remoteOption) remoteOption.disabled = true;
+              if (location === 'Remote') {
+                els.location.value = '';
+              }
+              messages.push({ type: 'lock', text: 'Automotive + Remote ist gesperrt: bitte Hybrid oder Vor Ort wählen.' });
+            }
+
+            if (level === 'Junior') {
+              if (projectLeadOption) projectLeadOption.disabled = true;
+              if (role === 'Projektleiter') {
+                els.role.value = '';
+              }
+              messages.push({ type: 'lock', text: 'Junior + Projektleiter ist gesperrt.' });
+            }
+
+            if (level === 'Veteran') {
+              if (doorsOption) doorsOption.disabled = false;
+              if (els.industry.value !== 'TuerenTore') {
+                els.industry.value = 'TuerenTore';
+              }
+              messages.push({ type: 'lock', text: 'Easter Egg aktiv: Veteran erzwingt Türen & Tore.' });
+            }
+
+            const domains = getDomains();
+            if (domains.includes('SAP CPQ') && !domains.includes('SAP VC')) {
+              messages.push({ type: 'warn', text: 'CPQ ohne VC funktioniert, aber der Consultant wird unrund.' });
+            }
+
+            return messages;
+          }
+
+          function computeRate(level, role) {
+            let rate = (baseRateByLevel[level] || 950) + (roleDelta[role] || 0);
+            if (level === 'Lead' || level === 'Veteran') {
+              rate += 120;
+            }
+            return rate;
+          }
+
+          function computeScore(messages) {
+            const domains = getDomains();
+            const complete = [
+              domains.length > 0,
+              !!els.level.value,
+              !!els.industry.value,
+              !!els.role.value,
+              !!els.location.value,
+              !!els.humor.value,
+              !!els.coffee.value
+            ];
+
+            const completedCount = complete.filter(Boolean).length;
+            let score = Math.round((completedCount / 7) * 70);
+
+            if (domains.includes('SAP VC')) score += 8;
+            if (domains.includes('SAP CPQ')) score += 8;
+            if (domains.includes('SAP VC') && domains.includes('SAP CPQ')) score += 4;
+
+            if (els.level.value === 'Senior' || els.level.value === 'Lead' || els.level.value === 'Veteran') score += 4;
+            if (els.role.value === 'Business Consultant') score += 4;
+            if (els.location.value === 'Hybrid' || els.location.value === 'Vor Ort (Umkreis Soest)') score += 2;
+
+            const hasWarning = messages.some((m) => m.type === 'warn');
+            if (hasWarning) score -= 6;
+
+            if (score > 100) score = 100;
+            if (score < 0) score = 0;
+            return score;
+          }
+
+          function renderMessages(items) {
+            els.messages.innerHTML = '';
+            if (!items.length) {
+              const li = document.createElement('li');
+              li.textContent = 'Keine Konflikte. Die Regel-Engine ist zufrieden.';
+              els.messages.appendChild(li);
+              return;
+            }
+
+            items.forEach((m) => {
+              const li = document.createElement('li');
+              li.className = m.type === 'warn' ? 'cfg-warn' : 'cfg-lock';
+              li.textContent = m.text;
+              els.messages.appendChild(li);
+            });
+          }
+
+          function update() {
+            const messages = enforceConstraints();
+            const score = computeScore(messages);
+            const rate = computeRate(els.level.value, els.role.value);
+
+            els.score.textContent = score + '%';
+            els.meter.style.width = score + '%';
+            els.rate.textContent = formatRate(rate);
+            renderMessages(messages);
+
+            if (score === 100) {
+              els.reveal.style.display = 'block';
+            } else {
+              els.reveal.style.display = 'none';
+            }
+
+            const disabledOptions = document.querySelectorAll('#cfg-mini-configurator option:disabled');
+            disabledOptions.forEach((opt) => {
+              const select = opt.parentElement;
+              if (!select) return;
+            });
+          }
+
+          function resetAll() {
+            els.domainChecks.forEach((c) => (c.checked = false));
+            els.level.value = '';
+            els.industry.value = '';
+            els.role.value = '';
+            els.location.value = '';
+            els.humor.value = '';
+            els.coffee.value = '';
+            update();
+          }
+
+          [...els.domainChecks, els.level, els.industry, els.role, els.location, els.humor, els.coffee].forEach((el) => {
+            el.addEventListener('change', update);
+          });
+
+          els.reset.addEventListener('click', resetAll);
+          update();
+        })();
+      </script>
+    </section>
+    <!-- === HIER ENDET DER KONFIGURATOR === -->
+  </body>
+</html>

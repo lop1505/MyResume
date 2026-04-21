@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Fussball</title>
+  <desc id="desc">Stilisiertes Fussball-Icon im CI-Stil</desc>
+  <rect width="64" height="64" rx="14" fill="#faf8f4"/>
+  <circle cx="32" cy="32" r="20" fill="#2a2a2e"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#c07b3a" stroke-width="2"/>
+  <polygon points="32,22 38,26 36,33 28,33 26,26" fill="#faf8f4"/>
+  <path d="M32 22l-8-5M32 22l8-5M26 33l-7 4M38 33l7 4M28 33l-2 9M36 33l2 9" stroke="#faf8f4" stroke-width="2" stroke-linecap="round"/>
+</svg>

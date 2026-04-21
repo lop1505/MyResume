@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Padel Tennis</title>
+  <desc id="desc">Stilisiertes Padel-Schlaeger-und-Ball-Icon</desc>
+  <defs>
+    <linearGradient id="handle" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8a5425"/>
+      <stop offset="1" stop-color="#c07b3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#faf8f4"/>
+  <g transform="rotate(-18 30 28)">
+    <path d="M19 11c-7.2 0-13 5.8-13 13s5.8 13 13 13h4l5 16c.6 1.8 2.5 2.8 4.3 2.2l2.8-.9c1.8-.6 2.8-2.5 2.2-4.3l-5.1-16.3c4.1-2.4 6.8-6.8 6.8-11.8 0-7.2-5.8-13-13-13H19z" fill="url(#handle)"/>
+    <circle cx="22.5" cy="24" r="10.5" fill="#2a2a2e"/>
+    <g fill="#faf8f4">
+      <circle cx="18.5" cy="20" r="1.5"/>
+      <circle cx="23" cy="19" r="1.5"/>
+      <circle cx="27.5" cy="20.5" r="1.5"/>
+      <circle cx="17" cy="24.5" r="1.5"/>
+      <circle cx="21.5" cy="24" r="1.5"/>
+      <circle cx="26" cy="24.5" r="1.5"/>
+      <circle cx="19" cy="29" r="1.5"/>
+      <circle cx="23.5" cy="29" r="1.5"/>
+      <circle cx="28" cy="28" r="1.5"/>
+    </g>
+  </g>
+  <circle cx="47" cy="18" r="6" fill="#c07b3a"/>
+  <path d="M43.5 18h7" stroke="#faf8f4" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M47 14.5v7" stroke="#faf8f4" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
